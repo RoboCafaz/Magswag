@@ -103,6 +103,28 @@ body
 	padding: 20px;
 }
 
+#tree
+{
+	background: #f77;
+	border: 1px dashed #a00;
+	margin: 12px;
+}
+
+#tree p
+{
+	background: #fff;
+	border: 1px dashed #a00;
+	margin: 6px;
+	padding: 3px;
+}
+
+#doll
+{
+	background: #f77;
+	border: 1px dashed #a00;
+	margin: 12px;
+}
+
 #sidebar
 {
 	float: right;

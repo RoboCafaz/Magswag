@@ -5,5 +5,22 @@
 	<li><b>Health:</b> {{hp[prof.hp].name}}
 </ul>
 <ul>
-	<li ng-repeat="stat in stats"><b>{{stat.name}}:</b> {{stat.value}}</li>
+	<li ng-repeat="stat in stats"><img src='{{stat.icon}}' title='{{stat.name}}'/> {{stat.value}}</li>
 </ul>
+
+<div id="tree">
+	<p>Remaining Points: {{maxTraits - totalTraits}} <button ng-click="resetTraits()">Reset</button></p>
+	<ul>
+		<li ng-repeat="trait in prof.traits">
+			{{trait.name}} - {{traits[$index]}}
+			<img src='{{stats[trait.primary].icon}}' title='{{stats[trait.primary].name}}'/>
+			<img src='{{stats[trait.secondary].icon}}' title='{{stats[trait.secondary].name}}'/>
+			<button ng-click="adjustTrait($index,5)">+5</button>
+			<button ng-click="adjustTrait($index,-5)">-5</button>
+		</li>
+	</ul>
+</div>
+
+<div id="doll">
+
+</div>

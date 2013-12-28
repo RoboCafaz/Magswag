@@ -1,7 +1,12 @@
-angular.module('Swag.Controller', [])
-.controller('SwagController', ['$scope', function ($scope) {
+angular.module("Swag.Controller", ["Swag.Service"])
+.controller("SwagController", ["$scope", "Armor", function ($scope, $armor) {
 			/** Constants **/
 			$scope.baseStatValue = 916;
+
+			$armor.success(function (data) {
+				$scope.slots = data.slots;
+				$scope.spreads = data.stats;
+			});
 
 			$scope.armor = [
 				"Light",

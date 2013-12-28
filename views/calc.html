@@ -12,15 +12,30 @@
 	<p>Remaining Points: {{maxTraits - totalTraits}} <button ng-click="resetTraits()">Reset</button></p>
 	<ul>
 		<li ng-repeat="trait in prof.traits">
-			{{trait.name}} - {{traits[$index]}}
-			<img src='{{stats[trait.primary].icon}}' title='{{stats[trait.primary].name}}'/>
-			<img src='{{stats[trait.secondary].icon}}' title='{{stats[trait.secondary].name}}'/>
-			<button ng-click="adjustTrait($index,5)">+5</button>
-			<button ng-click="adjustTrait($index,-5)">-5</button>
+			<span>
+				{{trait.name}}
+			</span>
+			<span>
+				<img src='{{stats[trait.primary].icon}}' title='{{stats[trait.primary].name}}'/>
+			</span>
+			<span>
+				<img src='{{stats[trait.secondary].icon}}' title='{{stats[trait.secondary].name}}'/>
+			</span>
+			<span>
+				<button ng-click="adjustTrait($index,5)">+5</button>
+			</span>
+			<span>
+				<button ng-click="adjustTrait($index,-5)">-5</button>
+			</span>
+			<span>
+				{{traits[$index]}}
+			</span>
 		</li>
 	</ul>
 </div>
 
 <div id="doll">
-
+	<ul>
+		<li ng-repeat="slot in slots">{{slot.name}}</li>
+	</ul
 </div>

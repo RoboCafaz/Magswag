@@ -1,0 +1,70 @@
+{
+	"slots" : [{
+			"name" : "Helmet",
+			"armor" : [[77, 97, 121], [77, 102, 127]],
+			"stats" : [[45, 32, 2], [47, 34, 2]]
+		}, {
+			"name" : "Chest",
+			"armor" : [[314, 338, 363], [330, 355, 381]],
+			"stats" : [[101, 72, 5], [106, 76, 5]]
+		}, {
+			"name" : "Legs",
+			"armor" : [[194, 218, 242], [203, 229, 254]],
+			"stats" : [[67, 48, 3], [71, 50, 4]]
+		}, {
+			"name" : "Shoulders",
+			"armor" : [[73, 97, 121], [77, 102, 127]],
+			"stats" : [[34, 24, 2], [35, 25, 2]]
+		}, {
+			"name" : "Gloves",
+			"armor" : [[133, 157, 182], [140, 165, 191]],
+			"stats" : [[34, 24, 2], [35, 25, 2]]
+		}, {
+			"name" : "Boots",
+			"armor" : [[133, 157, 182], [140, 165, 191]],
+			"stats" : [[34, 24, 2], [35, 25, 2]]
+		}, {
+			"name" : "Two-Handed Weapon",
+			"stats" : [[179, 128, 9], [188, 134, 10]]
+		}, {
+			"name" : "One-Handed Weapon",
+			"stats":[[90, 64, 5], [94, 67, 5]]
+		}, {
+			"name" : "Shield",
+			"armor" : [[61,61,61],[64,64,64]],
+			"stats":[[90, 64, 5], [94, 67, 5]]
+		}
+	],
+	"stats" : [{
+			"name" : "Berserker",
+			"weapon" : true,
+			"armor" : true,
+			"back" : true,
+			"trinket" : true,
+			"jewel" : true,
+			"primary" : "Power",
+			"secondary" : "Precision",
+			"tertiary" : "Critical Damage"
+		}, {
+			"name" : "Soldier",
+			"weapon" : true,
+			"armor" : true,
+			"back" : true,
+			"trinket" : true,
+			"jewel" : false,
+			"primary" : "Power",
+			"secondary" : "Toughness",
+			"tertiary" : "Vitaity"
+		}, {
+			"name" : "Valkyrie",
+			"weapon" : true,
+			"armor" : true,
+			"back" : false,
+			"trinket" : true,
+			"jewel" : true,
+			"primary" : "Power",
+			"secondary" : "Precision",
+			"tertiary" : "Critical Damage"
+		}
+	]
+}

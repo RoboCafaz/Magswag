@@ -1,0 +1,9 @@
+<div id="sidebar" ng-include src="'views/sidebar.html'"></div>
+<h1>{{prof.name}}</h1>
+<ul>
+	<li><b>Armor:</b> {{armor[prof.armor]}}
+	<li><b>Health:</b> {{hp[prof.hp].name}}
+</ul>
+<ul>
+	<li ng-repeat="stat in stats"><b>{{stat.name}}:</b> {{stat.value}}</li>
+</ul>

@@ -1,0 +1,136 @@
+body
+{
+	font-family: "Verdana", Arial, Sans-serif;
+	background: #eee;
+}
+
+#container
+{
+	margin: 0 auto;
+	width: 900px;
+	padding-top: 120px;
+}
+
+#header
+{
+	color: #fff;
+	background: #f94;
+	background-image: url("../images/magswag.png");
+	background-repeat: no-repeat;
+	background-position: right center;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+#header h1
+{
+	padding-left: 120px;
+}
+
+#navigation
+{
+	float: left;
+	width: 100%;
+	background: #fd7;
+}
+
+#navigation ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+#navigation ul li
+{
+	list-style-type: none;
+	display: inline;
+}
+
+#navigation li a
+{
+	color: #a60;
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	text-decoration: none;
+	border-right: 1px solid #fff;
+}
+
+#navigation li a:hover
+{
+	color: #fd7;
+	background: #a60;
+}
+
+#content-container
+{
+	float: left;
+	width: 900px;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+#content-container h1
+{
+	margin: 0;
+	color: #f00;
+}
+
+#content-container h2
+{
+	margin: 0;
+	color: #f00;
+}
+
+#content-container h3
+{
+	margin: 0;
+	color: #f00;
+}
+
+#content
+{
+	clear: left;
+	float: left;
+	width: 560px;
+	padding: 20px 0;
+	margin: 0 0 0 30px;
+	display: inline;
+	border-right: 1px dashed #f94;
+}
+
+#sidebar
+{
+	float: right;
+	width: 240px;
+	padding: 20px 0;
+	margin: 0 20px 0 0;
+	display: inline;
+}
+
+#padding
+{
+	clear: left;
+	height: 60px;
+}
+
+#footer
+{
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	left: 0px;
+	color: #fff;
+	background: #f94;
+	text-align: right;
+	padding: 20px;
+	height: 1%;
+}
+
+#footer p
+{
+	margin: 0;
+	padding-right: 250px;
+}

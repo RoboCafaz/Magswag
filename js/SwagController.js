@@ -93,10 +93,11 @@ angular.module("Swag.Controller", ["Swag.Service"])
 				$scope.calculate();
 			};
 
-			$scope.classes = [{
+			$scope.professions = [{
 					name : "Warrior",
 					armor : 2,
 					hp : 2,
+					icon : "images/icons/Warrior.png",
 					traits : [{
 							name : "Strength",
 							primary : "Power",
@@ -123,6 +124,7 @@ angular.module("Swag.Controller", ["Swag.Service"])
 					name : "Guardian",
 					armor : 2,
 					hp : 0,
+					icon : "images/icons/Guardian.png",
 					traits : [{
 							name : "Zeal",
 							primary : "Power ",
@@ -148,15 +150,18 @@ angular.module("Swag.Controller", ["Swag.Service"])
 				}, {
 					name : "Thief",
 					armor : 1,
-					hp : 0
+					hp : 0,
+					icon : "images/icons/Thief.png"
 				}, {
 					name : "Ranger",
 					armor : 1,
-					hp : 1
+					hp : 1,
+					icon : "images/icons/Ranger.png"
 				}, {
 					name : "Engineer",
 					armor : 1,
 					hp : 1,
+					icon : "images/icons/Engineer.png",
 					traits : [{
 							name : "Explosives",
 							primary : "Power",
@@ -182,15 +187,18 @@ angular.module("Swag.Controller", ["Swag.Service"])
 				}, {
 					name : "Elementalist",
 					armor : 0,
-					hp : 0
+					hp : 0,
+					icon : "images/icons/Elementalist.png"
 				}, {
 					name : "Mesmer",
 					armor : 0,
-					hp : 1
+					hp : 1,
+					icon : "images/icons/Mesmer.png"
 				}, {
 					name : "Necromancer",
 					armor : 0,
-					hp : 2
+					hp : 2,
+					icon : "images/icons/Necromancer.png"
 				}
 			];
 
@@ -223,7 +231,7 @@ angular.module("Swag.Controller", ["Swag.Service"])
 			};
 
 			/** --- Begin Functionality --- **/
-			$scope.prof = $scope.classes[0];
+			$scope.prof = $scope.professions[0];
 
 			$scope.calculate = function () {
 				$scope.resetStats();

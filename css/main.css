@@ -103,6 +103,43 @@ body
 	padding: 20px;
 }
 
+#content ul
+{
+	display: table;
+}
+
+#content li
+{
+  display: table-row; 
+}
+
+#content span
+{
+	display: table-cell;
+}
+
+#classpick
+{
+	background: #fd7;
+	border: 1px dashed #a00;
+	margin: 12px;
+	padding: 0;
+}
+
+#classpick span
+{
+	color: #a60;
+	padding: 8px;
+	border-left: 1px solid #fff;
+	margin: 0;
+}
+
+#classpick span:hover
+{
+	background: #d93;
+	cursor: pointer;
+}
+
 #tree
 {
 	background: #f77;
@@ -118,26 +155,19 @@ body
 	padding: 3px;
 }
 
-#tree ul
-{
-	display: table;
-}
-
-#tree li
-{
-  display: table-row; 
-}
-
-#tree span
-{
-	display: table-cell;
-}
-
 #doll
 {
 	background: #f77;
 	border: 1px dashed #a00;
 	margin: 12px;
+}
+
+#leftbar
+{
+	float: left;
+	height: 100%;
+	width: 600px;
+	display: inline;
 }
 
 #sidebar

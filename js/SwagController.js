@@ -23,77 +23,64 @@ angular.module('Swag.Controller', [])
 
 			$scope.gear = [];
 
-			$scope.stats = {};
-			$scope.stats["hp"] = {
-				name : "Health",
-				value : 0,
-				icon : "images/icons/Health.png"
-			};
-			$scope.stats["armor"] = {
-				name : "Armor",
-				value : 0,
-				icon : "images/icons/Armor.png"
-			};
-			$scope.stats["atk"] = {
-				name : "Attack",
-				value : 0,
-				icon : "images/icons/Attack.png"
-			};
-			$scope.stats["crit"] = {
-				name : "Critical Hit Chance",
-				value : 0,
-				icon : "images/icons/Critical_Chance.png"
-			};
-			$scope.stats["vit"] = {
-				name : "Vitality",
-				value : 0,
-				icon : "images/icons/Vitality.png"
-			};
-			$scope.stats["tough"] = {
-				name : "Toughness",
-				value : 0,
-				icon : "images/icons/Toughness.png"
-			};
-			$scope.stats["pow"] = {
-				name : "Power",
-				value : 0,
-				icon : "images/icons/Power.png"
-			};
-			$scope.stats["prec"] = {
-				name : "Precision",
-				value : 0,
-				icon : "images/icons/Precision.png"
-			};
-			$scope.stats["condi"] = {
-				name : "Condition Damage",
-				value : 0,
-				icon : "images/icons/Condition_Damage.png"
-			};
-			$scope.stats["condid"] = {
-				name : "Condition Duration",
-				value : 0,
-				icon : "images/icons/Condition_Duration.png"
-			};
-			$scope.stats["critd"] = {
-				name : "Critical Damage",
-				value : 0,
-				icon : "images/icons/Critical_Damage.png"
-			};
-			$scope.stats["heal"] = {
-				name : "Healing Power",
-				value : 0,
-				icon : "images/icons/Healing_Power.png"
-			};
-			$scope.stats["boon"] = {
-				name : "Boon Duration",
-				value : 0,
-				icon : "images/icons/Boon_Duration.png"
-			};
-			$scope.stats["bonus"] = {
-				name : "Profession-specific",
-				value : 0,
-				icon : "images/icons/Bonus.png"
-			};
+			$scope.stats = [{
+					name : "Health",
+					value : 0,
+					icon : "images/icons/Health.png"
+				}, {
+					name : "Armor",
+					value : 0,
+					icon : "images/icons/Armor.png"
+				}, {
+					name : "Attack",
+					value : 0,
+					icon : "images/icons/Attack.png"
+				}, {
+					name : "Critical Hit Chance",
+					value : 0,
+					icon : "images/icons/Critical_Chance.png"
+				}, {
+					name : "Vitality",
+					value : 0,
+					icon : "images/icons/Vitality.png"
+				}, {
+					name : "Toughness",
+					value : 0,
+					icon : "images/icons/Toughness.png"
+				}, {
+					name : "Power",
+					value : 0,
+					icon : "images/icons/Power.png"
+				}, {
+					name : "Precision",
+					value : 0,
+					icon : "images/icons/Precision.png"
+				}, {
+					name : "Condition Damage",
+					value : 0,
+					icon : "images/icons/Condition_Damage.png"
+				}, {
+					name : "Condition Duration",
+					value : 0,
+					icon : "images/icons/Condition_Duration.png"
+				}, {
+					name : "Critical Damage",
+					value : 0,
+					icon : "images/icons/Critical_Damage.png"
+				}, {
+					name : "Healing Power",
+					value : 0,
+					icon : "images/icons/Healing_Power.png"
+				}, {
+					name : "Boon Duration",
+					value : 0,
+					icon : "images/icons/Boon_Duration.png"
+				}, {
+					name : "Bonus",
+					value : 0,
+					icon : "images/icons/Bonus.png"
+				}
+			];
 
 			$scope.changeClass = function (prof) {
 				console.log("Class changed to " + prof.name);
@@ -107,24 +94,24 @@ angular.module('Swag.Controller', [])
 					hp : 2,
 					traits : [{
 							name : "Strength",
-							primary : "pow",
-							secondary : "condid"
+							primary : "Power",
+							secondary : "Condition Duration"
 						}, {
 							name : "Arms",
-							primary : "prec",
-							secondary : "condi"
+							primary : "Precision",
+							secondary : "Condition Damage"
 						}, {
 							name : "Defenses",
-							primary : "tough",
-							secondary : "heal"
+							primary : "Toughness",
+							secondary : "Healing Power"
 						}, {
 							name : "Tactics",
-							primary : "vit",
-							secondary : "boon"
+							primary : "Vitality",
+							secondary : "Boon Duration"
 						}, {
 							name : "Discipline",
-							primary : "bonus",
-							secondary : "critd"
+							primary : "Bonus",
+							secondary : "Critical Damage"
 						}
 					]
 				}, {
@@ -133,24 +120,24 @@ angular.module('Swag.Controller', [])
 					hp : 0,
 					traits : [{
 							name : "Zeal",
-							primary : "pow",
-							secondary : "condid"
+							primary : "Power ",
+							secondary : "Condition Duration"
 						}, {
 							name : "Radiance",
-							primary : "prec",
-							secondary : "condi"
+							primary : "Precision",
+							secondary : "Condition Damage"
 						}, {
 							name : "Valor",
-							primary : "tough",
-							secondary : "critd"
+							primary : "Toughness",
+							secondary : "Critical Damage"
 						}, {
 							name : "Honor",
-							primary : "vit",
-							secondary : "heal"
+							primary : "Vitality",
+							secondary : "Healing Power"
 						}, {
 							name : "Virtues",
-							primary : "bonus",
-							secondary : "boon"
+							primary : "Bonus",
+							secondary : "Boon Duration"
 						}
 					]
 				}, {
@@ -167,24 +154,24 @@ angular.module('Swag.Controller', [])
 					hp : 1,
 					traits : [{
 							name : "Explosives",
-							primary : "pow",
-							secondary : "condid"
+							primary : "Power",
+							secondary : "Condition Duration"
 						}, {
 							name : "Firearms",
-							primary : "prec",
-							secondary : "condi"
+							primary : "Precision",
+							secondary : "Condition Damage"
 						}, {
 							name : "Inventions",
-							primary : "tough",
-							secondary : "heal"
+							primary : "Toughness",
+							secondary : "Healing Power"
 						}, {
 							name : "Alchemy",
-							primary : "vit",
-							secondary : "boon"
+							primary : "Vitality",
+							secondary : "Boon Duration"
 						}, {
 							name : "Tools",
-							primary : "bonus",
-							secondary : "critd"
+							primary : "Bonus",
+							secondary : "Critical Damage"
 						}
 					]
 				}, {
@@ -238,35 +225,33 @@ angular.module('Swag.Controller', [])
 				$scope.calculateGear();
 				$scope.calculateTrees();
 
-				$scope.stats["atk"].value = ($scope.stats["pow"].value + $scope.getWeaponDamage());
-				$scope.stats["crit"].value += ($scope.stats["prec"].value - 822) / 21;
-				$scope.stats["crit"].value = Math.floor($scope.stats["crit"].value);
-				$scope.stats["armor"].value += $scope.stats["tough"].value;
-				$scope.stats["hp"].value = $scope.hp[$scope.prof.hp].value;
-				$scope.stats["hp"].value += $scope.stats["vit"].value * 10;
+				$scope.adjustStat("Attack", ($scope.getStatValue("Power") + $scope.getWeaponDamage()));
+				$scope.adjustStat("Critical Chance", ($scope.getStatValue("Precision") - 822) / 21);
+				$scope.adjustStat("Critical Chance", Math.floor($scope.getStatValue("Critical Chance")));
+				$scope.adjustStat("Armor", $scope.getStatValue("Toughness"));
+				$scope.adjustStat("Health", $scope.hp[$scope.prof.hp].value);
+				$scope.adjustStat("Health", $scope.getStatValue("Vitality") * 10);
 			};
-			
+
 			$scope.getWeaponDamage = function () {
 				return 0;
 			};
 
 			$scope.resetStats = function () {
-				for (var key in $scope.stats) {
-					$scope.stats[key].value = 0;
+				for (var i = 0; i < $scope.stats.length; i++) {
+					$scope.stats[i].value = 0;
 				}
-				$scope.stats["pow"].value = $scope.baseStatValue;
-				$scope.stats["tough"].value = $scope.baseStatValue;
-				$scope.stats["vit"].value = $scope.baseStatValue;
-				$scope.stats["prec"].value = $scope.baseStatValue;
+				$scope.adjustStat("Power", $scope.baseStatValue);
+				$scope.adjustStat("Toughness", $scope.baseStatValue);
+				$scope.adjustStat("Vitality", $scope.baseStatValue);
+				$scope.adjustStat("Precision", $scope.baseStatValue);
 			};
 
 			$scope.calculateGear = function () {
 				for (var i = 0; i < $scope.gear.length; i++) {
 					var piece = $scope.gear[i];
-					for (var key in $scope.stats) {
-						if (piece[key]) {
-							$scope.stats[key].value += piece[key];
-						}
+					for (var i = 0; i < $scope.stats.length; i++) {
+						$scope.stats[i].value += piece[i];
 					}
 				};
 			};
@@ -274,8 +259,34 @@ angular.module('Swag.Controller', [])
 			$scope.calculateTrees = function () {
 				for (var i = 0; i < $scope.prof.traits.length; i++) {
 					var line = $scope.prof.traits[i];
-					$scope.stats[line.primary].value += $scope.traits[i] * 10;
-					$scope.stats[line.secondary].value += $scope.traits[i] * 10;
+					$scope.adjustStat(line.primary, $scope.traits[i] * 10);
+					$scope.adjustStat(line.secondary, $scope.traits[i] * 10);
+				}
+			};
+
+			$scope.getStat = function (name) {
+				var stat = $scope.stats.filter(function (item) {
+						return (item.name === name);
+					});
+				if (stat.length == 1) {
+					return stat[0];
+				}
+				return null;
+			};
+
+			$scope.getStatValue = function (name) {
+				var stat = $scope.getStat(name);
+				if (stat != null) {
+					return stat.value;
+				} else {
+					return 0;
+				}
+			};
+
+			$scope.adjustStat = function (name, value) {
+				var stat = $scope.getStat(name);
+				if (stat != null) {
+					stat.value += value;
 				}
 			};
 

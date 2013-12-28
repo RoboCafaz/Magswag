@@ -41,7 +41,7 @@ angular.module("Swag.Controller", ["Swag.Service"])
 					value : 0,
 					icon : "images/icons/Attack.png"
 				}, {
-					name : "Critical Hit Chance",
+					name : "Critical Chance",
 					value : 0,
 					icon : "images/icons/Critical_Chance.png"
 				}, {
@@ -127,7 +127,7 @@ angular.module("Swag.Controller", ["Swag.Service"])
 					icon : "images/icons/Guardian.png",
 					traits : [{
 							name : "Zeal",
-							primary : "Power ",
+							primary : "Power",
 							secondary : "Condition Duration"
 						}, {
 							name : "Radiance",
@@ -151,12 +151,56 @@ angular.module("Swag.Controller", ["Swag.Service"])
 					name : "Thief",
 					armor : 1,
 					hp : 0,
-					icon : "images/icons/Thief.png"
+					icon : "images/icons/Thief.png",
+					traits : [{
+							name : "Deadly Arts",
+							primary : "Power",
+							secondary : "Condition Duration"
+						}, {
+							name : "Critical Strikes",
+							primary : "Precision",
+							secondary : "Critical Damage"
+						}, {
+							name : "Shadow Arts",
+							primary : "Toughness",
+							secondary : "Healing Power"
+						}, {
+							name : "Acrobatics",
+							primary : "Vitality",
+							secondary : "Boon Duration"
+						}, {
+							name : "Trickery",
+							primary : "Bonus",
+							secondary : "Condition Damage"
+						}
+					]
 				}, {
 					name : "Ranger",
 					armor : 1,
 					hp : 1,
-					icon : "images/icons/Ranger.png"
+					icon : "images/icons/Ranger.png",
+					traits : [{
+							name : "Marksmanship",
+							primary : "Power",
+							secondary : "Condition Duration"
+						}, {
+							name : "Skirmishing",
+							primary : "Precision",
+							secondary : "Critical Damage"
+						}, {
+							name : "Wilderness Survival",
+							primary : "Toughness",
+							secondary : "Condition Damage"
+						}, {
+							name : "Nature Magic",
+							primary : "Vitality",
+							secondary : "Boon Duration"
+						}, {
+							name : "Beastmastery",
+							primary : "Bonus",
+							secondary : "Healing Power"
+						}
+					]
 				}, {
 					name : "Engineer",
 					armor : 1,
@@ -188,17 +232,83 @@ angular.module("Swag.Controller", ["Swag.Service"])
 					name : "Elementalist",
 					armor : 0,
 					hp : 0,
-					icon : "images/icons/Elementalist.png"
+					icon : "images/icons/Elementalist.png",
+					traits : [{
+							name : "Fire Magic",
+							primary : "Power",
+							secondary : "Condition Duration"
+						}, {
+							name : "Air Magic",
+							primary : "Precision",
+							secondary : "Critical Damage"
+						}, {
+							name : "Earth Magic",
+							primary : "Toughness",
+							secondary : "Condition Damage"
+						}, {
+							name : "Water Magic",
+							primary : "Vitality",
+							secondary : "Healing Power"
+						}, {
+							name : "Arcana",
+							primary : "Bonus",
+							secondary : "Boon Duration"
+						}
+					]
 				}, {
 					name : "Mesmer",
 					armor : 0,
 					hp : 1,
-					icon : "images/icons/Mesmer.png"
+					icon : "images/icons/Mesmer.png",
+					traits : [{
+							name : "Domination",
+							primary : "Power",
+							secondary : "Condition Duration"
+						}, {
+							name : "Dueling",
+							primary : "Precision",
+							secondary : "Critical Damage"
+						}, {
+							name : "Chaos",
+							primary : "Toughness",
+							secondary : "Boon Duration"
+						}, {
+							name : "Inspiration",
+							primary : "Vitality",
+							secondary : "Healing Power"
+						}, {
+							name : "Illusions",
+							primary : "Bonus",
+							secondary : "Condition Damage"
+						}
+					]
 				}, {
 					name : "Necromancer",
 					armor : 0,
 					hp : 2,
-					icon : "images/icons/Necromancer.png"
+					icon : "images/icons/Necromancer.png",
+					traits : [{
+							name : "Spite",
+							primary : "Power",
+							secondary : "Condition Duration"
+						}, {
+							name : "Curses",
+							primary : "Precision",
+							secondary : "Condition Damage"
+						}, {
+							name : "Death Magic",
+							primary : "Toughness",
+							secondary : "Boon Duration"
+						}, {
+							name : "Blood Magic",
+							primary : "Vitality",
+							secondary : "Healing Power"
+						}, {
+							name : "Soul Reaping",
+							primary : "Bonus",
+							secondary : "Critical Damage"
+						}
+					]
 				}
 			];
 
@@ -239,8 +349,7 @@ angular.module("Swag.Controller", ["Swag.Service"])
 				$scope.calculateTrees();
 
 				$scope.adjustStat("Attack", ($scope.getStatValue("Power") + $scope.getWeaponDamage()));
-				$scope.adjustStat("Critical Chance", ($scope.getStatValue("Precision") - 822) / 21);
-				$scope.adjustStat("Critical Chance", Math.floor($scope.getStatValue("Critical Chance")));
+				$scope.adjustStat("Critical Chance", Math.floor(($scope.getStatValue("Precision") - 822) / 21));
 				$scope.adjustStat("Armor", $scope.getStatValue("Toughness"));
 				$scope.adjustStat("Health", $scope.hp[$scope.prof.hp].value);
 				$scope.adjustStat("Health", $scope.getStatValue("Vitality") * 10);

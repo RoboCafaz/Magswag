@@ -17,6 +17,23 @@ body
 	padding-top: 120px;
 }
 
+#table ul {
+	display: table;
+}
+
+#table li#head{
+	font-weight: bold;
+	text-align: center;
+}
+
+#table li {
+	display: table-row;
+}
+
+#table span {
+	display: table-cell;
+}
+
 #header
 {
 	color: #fff;
@@ -103,22 +120,7 @@ body
 	padding: 20px;
 }
 
-#content ul
-{
-	display: table;
-}
-
-#content li
-{
-  display: table-row; 
-}
-
-#content span
-{
-	display: table-cell;
-}
-
-#classpick
+#pick
 {
 	background: #fd7;
 	border: 1px dashed #a00;
@@ -126,7 +128,7 @@ body
 	padding: 0;
 }
 
-#classpick span
+#pick span
 {
 	color: #a60;
 	padding: 8px;
@@ -134,7 +136,7 @@ body
 	margin: 0;
 }
 
-#classpick span:hover
+#pick span:hover
 {
 	background: #d93;
 	cursor: pointer;

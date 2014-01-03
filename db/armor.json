@@ -1,70 +1,263 @@
 {
 	"slots" : [{
 			"name" : "Helmet",
+			"type" : "armor",
 			"armor" : [[77, 97, 121], [77, 102, 127]],
-			"stats" : [[45, 32, 2], [47, 34, 2]]
+			"stats" : [[45, 32, 2], [47, 34, 2]],
+			"celestial" : [[20, 3], [21, 3]]
 		}, {
 			"name" : "Chest",
+			"type" : "armor",
 			"armor" : [[314, 338, 363], [330, 355, 381]],
-			"stats" : [[101, 72, 5], [106, 76, 5]]
+			"stats" : [[101, 72, 5], [106, 76, 5]],
+			"celestial" : [[45, 6], [47, 6]]
 		}, {
 			"name" : "Legs",
+			"type" : "armor",
 			"armor" : [[194, 218, 242], [203, 229, 254]],
-			"stats" : [[67, 48, 3], [71, 50, 4]]
+			"stats" : [[67, 48, 3], [71, 50, 4]],
+			"celestial" : [[30, 4], [31, 4]]
 		}, {
 			"name" : "Shoulders",
+			"type" : "armor",
 			"armor" : [[73, 97, 121], [77, 102, 127]],
-			"stats" : [[34, 24, 2], [35, 25, 2]]
+			"stats" : [[34, 24, 2], [35, 25, 2]],
+			"celestial" : [[15, 2], [16, 2]]
 		}, {
 			"name" : "Gloves",
+			"type" : "armor",
 			"armor" : [[133, 157, 182], [140, 165, 191]],
-			"stats" : [[34, 24, 2], [35, 25, 2]]
+			"stats" : [[34, 24, 2], [35, 25, 2]],
+			"celestial" : [[15, 2], [16, 2]]
 		}, {
 			"name" : "Boots",
+			"type" : "armor",
 			"armor" : [[133, 157, 182], [140, 165, 191]],
-			"stats" : [[34, 24, 2], [35, 25, 2]]
+			"stats" : [[34, 24, 2], [35, 25, 2]],
+			"celestial" : [[15, 2], [16, 2]]
 		}, {
 			"name" : "Two-Handed Weapon",
-			"stats" : [[179, 128, 9], [188, 134, 10]]
+			"type" : "weapon",
+			"stats" : [[179, 128, 9], [188, 134, 10]],
+			"celestial" : [[79, 10], [83, 11]]
 		}, {
 			"name" : "One-Handed Weapon",
-			"stats":[[90, 64, 5], [94, 67, 5]]
+			"type" : "weapon",
+			"stats" : [[90, 64, 5], [94, 67, 5]],
+			"celestial" : [[40, 5], [42, 5]]
 		}, {
 			"name" : "Shield",
-			"armor" : [[61,61,61],[64,64,64]],
-			"stats":[[90, 64, 5], [94, 67, 5]]
+			"type" : "weapon",
+			"armor" : [[61, 61, 61], [64, 64, 64]],
+			"stats" : [[90, 64, 5], [94, 67, 5]],
+			"celestial" : [[40, 5], [42, 5]]
+		}, {
+			"name" : "Backpiece",
+			"type" : "back",
+			"stats" : [[22, 16, 1], [56, 35, 5]],
+			"celestial" : [[], [22, 3]]
+		}, {
+			"name" : "Accessory",
+			"type" : "trinket",
+			"stats" : [[56, 40, 3], [91, 60, 7]],
+			"celestial" : [[15, 2], [38, 5]]
+		}, {
+			"name" : "Amulet",
+			"type" : "trinket",
+			"stats" : [[90, 64, 5], [126, 85, 9]],
+			"celestial" : [[15, 2], [54, 7]]
+		}, {
+			"name" : "Ring",
+			"type" : "trinket",
+			"stats" : [[67, 48, 3], [103, 68, 8]],
+			"celestial" : [[30, 4], [43, 6]]
 		}
 	],
-	"stats" : [{
+	"spreads" : [{
 			"name" : "Berserker",
-			"weapon" : true,
-			"armor" : true,
-			"back" : true,
-			"trinket" : true,
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
 			"jewel" : true,
 			"primary" : "Power",
 			"secondary" : "Precision",
-			"tertiary" : "Critical Damage"
+			"tertiary" : "Critical Damage",
+			"icon" : "images/icons/stats/Berserker.png"
 		}, {
 			"name" : "Soldier",
-			"weapon" : true,
-			"armor" : true,
-			"back" : true,
-			"trinket" : true,
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
 			"jewel" : false,
 			"primary" : "Power",
 			"secondary" : "Toughness",
-			"tertiary" : "Vitaity"
+			"tertiary" : "Vitality",
+			"icon" : "images/icons/stats/Soldier.png"
 		}, {
 			"name" : "Valkyrie",
-			"weapon" : true,
-			"armor" : true,
-			"back" : false,
-			"trinket" : true,
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [false, false],
+			"trinket" : [true, true],
 			"jewel" : true,
 			"primary" : "Power",
 			"secondary" : "Precision",
-			"tertiary" : "Critical Damage"
+			"tertiary" : "Critical Damage",
+			"icon" : "images/icons/stats/Valkyrie.png"
+		}, {
+			"name" : "Asssassin",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Precision",
+			"secondary" : "Power",
+			"tertiary" : "Critical Damage",
+			"icon" : "images/icons/stats/Assassin.png"
+		}, {
+			"name" : "Rampager",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Precision",
+			"secondary" : "Power",
+			"tertiary" : "Condition Damage",
+			"icon" : "images/icons/stats/Rampager.png"
+		}, {
+			"name" : "Cavalier",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Toughness",
+			"secondary" : "Power",
+			"tertiary" : "Critical Damage",
+			"icon" : "images/icons/stats/Cavalier.png"
+		}, {
+			"name" : "Knight",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Toughness",
+			"secondary" : "Power",
+			"tertiary" : "Precision",
+			"icon" : "images/icons/stats/Knight.png"
+		}, {
+			"name" : "Settler",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Toughness",
+			"secondary" : "Condition Damage",
+			"tertiary" : "Healing Power",
+			"icon" : "images/icons/stats/Settler.png"
+		}, {
+			"name" : "Sentinel",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Vitality",
+			"secondary" : "Power",
+			"tertiary" : "Toughness",
+			"icon" : "images/icons/stats/Sentinel.png"
+		}, {
+			"name" : "Shaman",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Vitality",
+			"secondary" : "Healing Power",
+			"tertiary" : "Condition Damage",
+			"icon" : "images/icons/stats/Shaman.png"
+		}, {
+			"name" : "Carrion",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Condition Damage",
+			"secondary" : "Power",
+			"tertiary" : "Vitality",
+			"icon" : "images/icons/stats/Carrion.png"
+		}, {
+			"name" : "Dire",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Condition Damage",
+			"secondary" : "Toughness",
+			"tertiary" : "Vitality",
+			"icon" : "images/icons/stats/Dire.png"
+		}, {
+			"name" : "Rabid",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Condition Damage",
+			"secondary" : "Toughness",
+			"tertiary" : "Precision",
+			"icon" : "images/icons/stats/Rabid.png"
+		}, {
+			"name" : "Apothecary",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Healing Power",
+			"secondary" : "Condition Damage",
+			"tertiary" : "Toughness",
+			"icon" : "images/icons/stats/Apothecary.png"
+		}, {
+			"name" : "Cleric",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Healing Power",
+			"secondary" : "Power",
+			"tertiary" : "Toughness",
+			"icon" : "images/icons/stats/Cleric.png"
+		}, {
+			"name" : "Magi",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"primary" : "Healing Power",
+			"secondary" : "Vitality",
+			"tertiary" : "Precision",
+			"icon" : "images/icons/stats/Magi.png"
+		}, {
+			"name" : "Celestial",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : true,
+			"celestial" : true,
+			"icon" : "images/icons/stats/Celestial.png"
 		}
 	]
 }

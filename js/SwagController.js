@@ -1,12 +1,34 @@
-angular.module("Swag.Controller", ["Swag.Service"])
-.controller("SwagController", ["$scope", "Armor", function ($scope, $armor) {
+angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
+.controller("SwagController", ["$scope", "$sanitize", "Armor", "Stats", "Professions", function ($scope, $sanitize, $armor, $stats, $profs) {
+			$scope.slots = [];
+			$scope.spreads = [];
+			$scope.stats = [];
+
 			/** Constants **/
 			$scope.baseStatValue = 916;
 
 			$armor.success(function (data) {
 				$scope.slots = data.slots;
-				$scope.spreads = data.stats;
+				$scope.spreads = data.spreads;
 			});
+
+			$stats.success(function (data) {
+				$scope.stats = data.stats;
+			});
+
+			$profs.success(function (data) {
+				$scope.professions = data.professions;
+				$scope.prof = $scope.professions[0];
+				$scope.calculate();
+			});
+
+			$scope.getIcon = function (collection, name) {
+				var item = $scope.getItem(collection, name);
+				if (item != null && item.icon != null) {
+					return " < img src = '" + item.icon + "' title = '" + name + "' /  > ";
+				}
+				return null;
+			};
 
 			$scope.armor = [
 				"Light",
@@ -26,64 +48,65 @@ angular.module("Swag.Controller", ["Swag.Service"])
 				}
 			];
 
-			$scope.gear = [];
-
-			$scope.stats = [{
-					name : "Health",
-					value : 0,
-					icon : "images/icons/Health.png"
+			$scope.gear = [{
+					name : "Helmet",
+					slots : ["Helmet"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Armor",
-					value : 0,
-					icon : "images/icons/Armor.png"
+					name : "Chest",
+					slots : ["Chest"],
+					item : null,
 				}, {
-					name : "Attack",
-					value : 0,
-					icon : "images/icons/Attack.png"
+					name : "Legs",
+					slots : ["Legs"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Critical Chance",
-					value : 0,
-					icon : "images/icons/Critical_Chance.png"
+					name : "Gloves",
+					slots : ["Gloves"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Vitality",
-					value : 0,
-					icon : "images/icons/Vitality.png"
+					name : "Boots",
+					slots : ["Boots"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Toughness",
-					value : 0,
-					icon : "images/icons/Toughness.png"
+					name : "Main-Hand",
+					slots : ["Two-Handed Weapon", "One-Handed Weapon"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Power",
-					value : 0,
-					icon : "images/icons/Power.png"
+					name : "Off-Hand",
+					slots : ["One-Handed Weapon", "Shield"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Precision",
-					value : 0,
-					icon : "images/icons/Precision.png"
+					name : "Backpiece",
+					slots : ["Backpiece"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Condition Damage",
-					value : 0,
-					icon : "images/icons/Condition_Damage.png"
+					name : "Accessory 1",
+					slots : ["Accessory"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Condition Duration",
-					value : 0,
-					icon : "images/icons/Condition_Duration.png"
+					name : "Accessory 2",
+					slots : ["Accessory"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Critical Damage",
-					value : 0,
-					icon : "images/icons/Critical_Damage.png"
+					name : "Ring 1",
+					slots : ["Ring"],
+					item : null,
+					ascended : false
 				}, {
-					name : "Healing Power",
-					value : 0,
-					icon : "images/icons/Healing_Power.png"
-				}, {
-					name : "Boon Duration",
-					value : 0,
-					icon : "images/icons/Boon_Duration.png"
-				}, {
-					name : "Bonus",
-					value : 0,
-					icon : "images/icons/Bonus.png"
+					name : "Ring 2",
+					slots : ["Ring"],
+					item : null,
+					ascended : false
 				}
 			];
 
@@ -341,7 +364,6 @@ angular.module("Swag.Controller", ["Swag.Service"])
 			};
 
 			/** --- Begin Functionality --- **/
-			$scope.prof = $scope.professions[0];
 
 			$scope.calculate = function () {
 				$scope.resetStats();
@@ -372,8 +394,19 @@ angular.module("Swag.Controller", ["Swag.Service"])
 			$scope.calculateGear = function () {
 				for (var i = 0; i < $scope.gear.length; i++) {
 					var piece = $scope.gear[i];
-					for (var i = 0; i < $scope.stats.length; i++) {
-						$scope.stats[i].value += piece[i];
+					var item = piece.item;
+					if (item != null) {
+						var slot = $scope.getItem($scope.slots, piece.slots[0]);
+						var quality = 0;
+						if (piece.ascended) {
+							quality = 1;
+						}
+						if (item.celestial) {}
+						else {
+							$scope.adjustStat(item.primary, slot.stats[quality][0]);
+							$scope.adjustStat(item.secondary, slot.stats[quality][1]);
+							$scope.adjustStat(item.tertiary, slot.stats[quality][2]);
+						}
 					}
 				};
 			};
@@ -386,18 +419,56 @@ angular.module("Swag.Controller", ["Swag.Service"])
 				}
 			};
 
-			$scope.getStat = function (name) {
-				var stat = $scope.stats.filter(function (item) {
+			$scope.getItem = function (collection, name) {
+				var items = collection.filter(function (item) {
 						return (item.name === name);
 					});
-				if (stat.length == 1) {
-					return stat[0];
+				if (items.length == 1) {
+					return items[0];
 				}
 				return null;
 			};
 
+			$scope.setAscended = function (gearSlot, ascended) {
+				gearSlot.ascended = ascended;
+				$scope.calculate();
+			};
+
+			$scope.changeGear = function (gearSlot, stat) {
+				gearSlot.item = stat;
+				$scope.calculate();
+			};
+
+			$scope.getStatDisplay = function (gearSlot, stat) {
+				var slot = $scope.getItem($scope.slots, gearSlot.slots[0]);
+				if (stat != null && stat.icon != null) {
+					var title = $scope.getToolTipForStat(stat, gearSlot);
+					return "<img src='" + stat.icon + "' title='" + title + "' />";
+				}
+				return null;
+			};
+
+			$scope.getToolTipForStat = function (stat, gearSlot) {
+				if (!stat || !gearSlot) {
+					return "";
+				}
+				var slot = $scope.getItem($scope.slots, gearSlot.slots[0]);
+				var title = stat.name + "\n";
+				var quality = 0;
+				if (gearSlot.ascended) {
+					quality = 1;
+				}
+				if (stat.celestial) {}
+				else {
+					title += "+" + slot.stats[quality][0] + " " + stat.primary + "\n"
+					 + "+" + slot.stats[quality][1] + " " + stat.secondary + "\n"
+					 + "+" + slot.stats[quality][1] + " " + stat.tertiary;
+				}
+				return title;
+			};
+
 			$scope.getStatValue = function (name) {
-				var stat = $scope.getStat(name);
+				var stat = $scope.getItem($scope.stats, name);
 				if (stat != null) {
 					return stat.value;
 				} else {
@@ -406,12 +477,10 @@ angular.module("Swag.Controller", ["Swag.Service"])
 			};
 
 			$scope.adjustStat = function (name, value) {
-				var stat = $scope.getStat(name);
+				var stat = $scope.getItem($scope.stats, name);
 				if (stat != null) {
 					stat.value += value;
 				}
 			};
-
-			$scope.calculate();
 		}
 	]);

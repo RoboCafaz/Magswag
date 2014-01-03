@@ -1,0 +1,220 @@
+{
+	"professions" : [{
+			"name" : "Warrior",
+			"armor" : 2,
+			"hp" : 2,
+			"icon" : "images/icons/Warrior.png",
+			"traits" : [{
+					"name" : "Strength",
+					"primary" : "Power",
+					"secondary" : "Condition Duration"
+				}, {
+					"name" : "Arms",
+					"primary" : "Precision",
+					"secondary" : "Condition Damage"
+				}, {
+					"name" : "Defenses",
+					"primary" : "Toughness",
+					"secondary" : "Healing Power"
+				}, {
+					"name" : "Tactics",
+					"primary" : "Vitality",
+					"secondary" : "Boon Duration"
+				}, {
+					"name" : "Discipline",
+					"primary" : "Bonus",
+					"secondary" : "Critical Damage"
+				}
+			]
+		}, {
+			"name" : "Guardian",
+			"armor" : 2,
+			"hp" : 0,
+			"icon" : "images/icons/Guardian.png",
+			"traits" : [{
+					"name" : "Zeal",
+					"primary" : "Power",
+					"secondary" : "Condition Duration"
+				}, {
+					"name" : "Radiance",
+					"primary" : "Precision",
+					"secondary" : "Condition Damage"
+				}, {
+					"name" : "Valor",
+					"primary" : "Toughness",
+					"secondary" : "Critical Damage"
+				}, {
+					"name" : "Honor",
+					"primary" : "Vitality",
+					"secondary" : "Healing Power"
+				}, {
+					"name" : "Virtues",
+					"primary" : "Bonus",
+					"secondary" : "Boon Duration"
+				}
+			]
+		}, {
+			"name" : "Thief",
+			"armor" : 1,
+			"hp" : 0,
+			"icon" : "images/icons/Thief.png",
+			"traits" : [{
+					"name" : "Deadly Arts",
+					"primary" : "Power",
+					"secondary" : "Condition Duration"
+				}, {
+					"name" : "Critical Strikes",
+					"primary" : "Precision",
+					"secondary" : "Critical Damage"
+				}, {
+					"name" : "Shadow Arts",
+					"primary" : "Toughness",
+					"secondary" : "Healing Power"
+				}, {
+					"name" : "Acrobatics",
+					"primary" : "Vitality",
+					"secondary" : "Boon Duration"
+				}, {
+					"name" : "Trickery",
+					"primary" : "Bonus",
+					"secondary" : "Condition Damage"
+				}
+			]
+		}, {
+			"name" : "Ranger",
+			"armor" : 1,
+			"hp" : 1,
+			"icon" : "images/icons/Ranger.png",
+			"traits" : [{
+					"name" : "Marksmanship",
+					"primary" : "Power",
+					"secondary" : "Condition Duration"
+				}, {
+					"name" : "Skirmishing",
+					"primary" : "Precision",
+					"secondary" : "Critical Damage"
+				}, {
+					"name" : "Wilderness Survival",
+					"primary" : "Toughness",
+					"secondary" : "Condition Damage"
+				}, {
+					"name" : "Nature Magic",
+					"primary" : "Vitality",
+					"secondary" : "Boon Duration"
+				}, {
+					"name" : "Beastmastery",
+					"primary" : "Bonus",
+					"secondary" : "Healing Power"
+				}
+			]
+		}, {
+			"name" : "Engineer",
+			"armor" : 1,
+			"hp" : 1,
+			"icon" : "images/icons/Engineer.png",
+			"traits" : [{
+					"name" : "Explosives",
+					"primary" : "Power",
+					"secondary" : "Condition Duration"
+				}, {
+					"name" : "Firearms",
+					"primary" : "Precision",
+					"secondary" : "Condition Damage"
+				}, {
+					"name" : "Inventions",
+					"primary" : "Toughness",
+					"secondary" : "Healing Power"
+				}, {
+					"name" : "Alchemy",
+					"primary" : "Vitality",
+					"secondary" : "Boon Duration"
+				}, {
+					"name" : "Tools",
+					"primary" : "Bonus",
+					"secondary" : "Critical Damage"
+				}
+			]
+		}, {
+			"name" : "Elementalist",
+			"armor" : 0,
+			"hp" : 0,
+			"icon" : "images/icons/Elementalist.png",
+			"traits" : [{
+					"name" : "Fire Magic",
+					"primary" : "Power",
+					"secondary" : "Condition Duration"
+				}, {
+					"name" : "Air Magic",
+					"primary" : "Precision",
+					"secondary" : "Critical Damage"
+				}, {
+					"name" : "Earth Magic",
+					"primary" : "Toughness",
+					"secondary" : "Condition Damage"
+				}, {
+					"name" : "Water Magic",
+					"primary" : "Vitality",
+					"secondary" : "Healing Power"
+				}, {
+					"name" : "Arcana",
+					"primary" : "Bonus",
+					"secondary" : "Boon Duration"
+				}
+			]
+		}, {
+			"name" : "Mesmer",
+			"armor" : 0,
+			"hp" : 1,
+			"icon" : "images/icons/Mesmer.png",
+			"traits" : [{
+					"name" : "Domination",
+					"primary" : "Power",
+					"secondary" : "Condition Duration"
+				}, {
+					"name" : "Dueling",
+					"primary" : "Precision",
+					"secondary" : "Critical Damage"
+				}, {
+					"name" : "Chaos",
+					"primary" : "Toughness",
+					"secondary" : "Boon Duration"
+				}, {
+					"name" : "Inspiration",
+					"primary" : "Vitality",
+					"secondary" : "Healing Power"
+				}, {
+					"name" : "Illusions",
+					"primary" : "Bonus",
+					"secondary" : "Condition Damage"
+				}
+			]
+		}, {
+			"name" : "Necromancer",
+			"armor" : 0,
+			"hp" : 2,
+			"icon" : "images/icons/Necromancer.png",
+			"traits" : [{
+					"name" : "Spite",
+					"primary" : "Power",
+					"secondary" : "Condition Duration"
+				}, {
+					"name" : "Curses",
+					"primary" : "Precision",
+					"secondary" : "Condition Damage"
+				}, {
+					"name" : "Death Magic",
+					"primary" : "Toughness",
+					"secondary" : "Boon Duration"
+				}, {
+					"name" : "Blood Magic",
+					"primary" : "Vitality",
+					"secondary" : "Healing Power"
+				}, {
+					"name" : "Soul Reaping",
+					"primary" : "Bonus",
+					"secondary" : "Critical Damage"
+				}
+			]
+		}
+	]
+}

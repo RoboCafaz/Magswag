@@ -1,8 +1,7 @@
 <div id="sidebar">
-	<ul>
+	<ul id="table">
 		<li ng-repeat="stat in stats">
-			<span>
-				<img src='{{stat.icon}}' title='{{stat.name}}'/>
+			<span ng-bind-html="getIcon(stats,stat.name)">
 			</span>
 			<span>
 				{{stat.value}}
@@ -11,11 +10,10 @@
 	</ul>
 </div>
 <div id="leftbar">
-	<div id="classpick">
-		<ul>
+	<div id="pick">
+		<ul id="table">
 			<li>
-				<span ng-repeat="prof in professions" ng-click="changeClass(prof)">
-					<img src="{{prof.icon}}" title="{{prof.name}}" />
+				<span ng-repeat="prof in professions" ng-click="changeClass(prof)" ng-bind-html="getIcon(professions,prof.name)">
 				</span>
 			</li>
 		</ul>
@@ -25,16 +23,14 @@
 
 	<div id="tree">
 		<p>Remaining Points: {{maxTraits - totalTraits}} <button ng-click="resetTraits()">Reset</button></p>
-		<ul>
+		<ul id="table">
 			<li ng-repeat="trait in prof.traits">
 				<span>
 					{{trait.name}}
 				</span>
-				<span>
-					<img src='{{stats[trait.primary].icon}}' title='{{stats[trait.primary].name}}'/>
+				<span ng-bind-html="getIcon(stats,trait.primary)">
 				</span>
-				<span>
-					<img src='{{stats[trait.secondary].icon}}' title='{{stats[trait.secondary].name}}'/>
+				<span ng-bind-html="getIcon(stats,trait.secondary)">
 				</span>
 				<span>
 					<button ng-click="adjustTrait($index,5)">+5</button>
@@ -50,8 +46,25 @@
 	</div>
 
 	<div id="doll">
-		<ul>
-			<li ng-repeat="slot in slots">{{slot.name}}</li>
-		</ul
+		<ul id="table">
+			<li ng-repeat="slot in gear">
+				<span>
+					{{slot.name}}
+				</span>
+				<span>
+					{{getToolTipForStat(slot.item,slot)}}
+				</span>
+				<span>
+					<input type="checkbox" ng-model="slot.ascended" >Ascended</input>
+				</span>
+				<span>
+					<ul id="pick">
+						<li>
+							<span ng-repeat="stat in spreads" ng-click="changeGear(slot,stat)" ng-bind-html="getStatDisplay(slot,stat)">
+						</li>
+					</ul>
+				</span>
+			</li>
+		</ul>
 	</div>
 </div>

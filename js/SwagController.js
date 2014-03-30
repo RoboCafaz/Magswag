@@ -140,7 +140,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						}, {
 							name : "Discipline",
 							primary : "Bonus",
-							secondary : "Critical Damage"
+							secondary : "Ferocity"
 						}
 					]
 				}, {
@@ -159,7 +159,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						}, {
 							name : "Valor",
 							primary : "Toughness",
-							secondary : "Critical Damage"
+							secondary : "Ferocity"
 						}, {
 							name : "Honor",
 							primary : "Vitality",
@@ -182,7 +182,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						}, {
 							name : "Critical Strikes",
 							primary : "Precision",
-							secondary : "Critical Damage"
+							secondary : "Ferocity"
 						}, {
 							name : "Shadow Arts",
 							primary : "Toughness",
@@ -209,7 +209,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						}, {
 							name : "Skirmishing",
 							primary : "Precision",
-							secondary : "Critical Damage"
+							secondary : "Ferocity"
 						}, {
 							name : "Wilderness Survival",
 							primary : "Toughness",
@@ -248,7 +248,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						}, {
 							name : "Tools",
 							primary : "Bonus",
-							secondary : "Critical Damage"
+							secondary : "Ferocity"
 						}
 					]
 				}, {
@@ -263,7 +263,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						}, {
 							name : "Air Magic",
 							primary : "Precision",
-							secondary : "Critical Damage"
+							secondary : "Ferocity"
 						}, {
 							name : "Earth Magic",
 							primary : "Toughness",
@@ -290,7 +290,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						}, {
 							name : "Dueling",
 							primary : "Precision",
-							secondary : "Critical Damage"
+							secondary : "Ferocity"
 						}, {
 							name : "Chaos",
 							primary : "Toughness",
@@ -329,7 +329,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						}, {
 							name : "Soul Reaping",
 							primary : "Bonus",
-							secondary : "Critical Damage"
+							secondary : "Ferocity"
 						}
 					]
 				}
@@ -372,6 +372,7 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 
 				$scope.adjustStat("Attack", ($scope.getStatValue("Power") + $scope.getWeaponDamage()));
 				$scope.adjustStat("Critical Chance", Math.floor(($scope.getStatValue("Precision") - 822) / 21));
+				$scope.adjustStat("Critical Damage", Math.floor(($scope.getStatValue("Ferocity")) / 15) + 50);
 				$scope.adjustStat("Armor", $scope.getStatValue("Toughness"));
 				$scope.adjustStat("Health", $scope.hp[$scope.prof.hp].value);
 				$scope.adjustStat("Health", $scope.getStatValue("Vitality") * 10);
@@ -401,11 +402,18 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 						if (piece.ascended) {
 							quality = 1;
 						}
-						if (item.celestial) {}
-						else {
+						if (item.celestial) {
+							$scope.adjustStat("Power", slot.celestial[quality]);
+							$scope.adjustStat("Precision", slot.celestial[quality]);
+							$scope.adjustStat("Toughness", slot.celestial[quality]);
+							$scope.adjustStat("Vitality", slot.celestial[quality]);
+							$scope.adjustStat("Ferocity", slot.celestial[quality]);
+							$scope.adjustStat("Healing Power", slot.celestial[quality]);
+							$scope.adjustStat("Condition Damage", slot.celestial[quality]);
+						} else {
 							$scope.adjustStat(item.primary, slot.stats[quality][0]);
 							$scope.adjustStat(item.secondary, slot.stats[quality][1]);
-							$scope.adjustStat(item.tertiary, slot.stats[quality][2]);
+							$scope.adjustStat(item.tertiary, slot.stats[quality][1]);
 						}
 					}
 				};
@@ -458,11 +466,18 @@ angular.module("Swag.Controller", ["ngSanitize", "Swag.Service"])
 				if (gearSlot.ascended) {
 					quality = 1;
 				}
-				if (stat.celestial) {}
-				else {
-					title += "+" + slot.stats[quality][0] + " " + stat.primary + "\n"
-					 + "+" + slot.stats[quality][1] + " " + stat.secondary + "\n"
-					 + "+" + slot.stats[quality][1] + " " + stat.tertiary;
+				var stats = slot.stats;
+				var cel = false;
+				if(stat.stats.length > 3){
+					cel = true;
+					stats = slot.celestial;
+				}
+				for(var $i = 0; $i < stat.stats.length ; $i++){
+					var type = 0;
+					if(!cel && $i == 0){
+						type = 1;
+					}
+					title += "+" + stats[quality][type] + " " + stat.stats[$i] + "\n";
 				}
 				return title;
 			};

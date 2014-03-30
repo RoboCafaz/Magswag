@@ -23,7 +23,7 @@
 				}, {
 					"name" : "Discipline",
 					"primary" : "Bonus",
-					"secondary" : "Critical Damage"
+					"secondary" : "Ferocity"
 				}
 			]
 		}, {
@@ -42,7 +42,7 @@
 				}, {
 					"name" : "Valor",
 					"primary" : "Toughness",
-					"secondary" : "Critical Damage"
+					"secondary" : "Ferocity"
 				}, {
 					"name" : "Honor",
 					"primary" : "Vitality",
@@ -65,7 +65,7 @@
 				}, {
 					"name" : "Critical Strikes",
 					"primary" : "Precision",
-					"secondary" : "Critical Damage"
+					"secondary" : "Ferocity"
 				}, {
 					"name" : "Shadow Arts",
 					"primary" : "Toughness",
@@ -92,7 +92,7 @@
 				}, {
 					"name" : "Skirmishing",
 					"primary" : "Precision",
-					"secondary" : "Critical Damage"
+					"secondary" : "Ferocity"
 				}, {
 					"name" : "Wilderness Survival",
 					"primary" : "Toughness",
@@ -131,7 +131,7 @@
 				}, {
 					"name" : "Tools",
 					"primary" : "Bonus",
-					"secondary" : "Critical Damage"
+					"secondary" : "Ferocity"
 				}
 			]
 		}, {
@@ -146,7 +146,7 @@
 				}, {
 					"name" : "Air Magic",
 					"primary" : "Precision",
-					"secondary" : "Critical Damage"
+					"secondary" : "Ferocity"
 				}, {
 					"name" : "Earth Magic",
 					"primary" : "Toughness",
@@ -173,7 +173,7 @@
 				}, {
 					"name" : "Dueling",
 					"primary" : "Precision",
-					"secondary" : "Critical Damage"
+					"secondary" : "Ferocity"
 				}, {
 					"name" : "Chaos",
 					"primary" : "Toughness",
@@ -212,7 +212,7 @@
 				}, {
 					"name" : "Soul Reaping",
 					"primary" : "Bonus",
-					"secondary" : "Critical Damage"
+					"secondary" : "Ferocity"
 				}
 			]
 		}

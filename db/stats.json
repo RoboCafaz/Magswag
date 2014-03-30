@@ -1,60 +1,55 @@
 {
 	"stats" : [{
 			"name" : "Health",
-			"value" : 0,
 			"icon" : "images/icons/Health.png"
 		}, {
 			"name" : "Armor",
-			"value" : 0,
 			"icon" : "images/icons/Armor.png"
 		}, {
 			"name" : "Attack",
-			"value" : 0,
 			"icon" : "images/icons/Attack.png"
 		}, {
 			"name" : "Critical Chance",
-			"value" : 0,
 			"icon" : "images/icons/Critical_Chance.png"
 		}, {
 			"name" : "Vitality",
-			"value" : 0,
 			"icon" : "images/icons/Vitality.png"
 		}, {
 			"name" : "Toughness",
-			"value" : 0,
 			"icon" : "images/icons/Toughness.png"
 		}, {
 			"name" : "Power",
-			"value" : 0,
 			"icon" : "images/icons/Power.png"
 		}, {
 			"name" : "Precision",
-			"value" : 0,
 			"icon" : "images/icons/Precision.png"
 		}, {
 			"name" : "Condition Damage",
-			"value" : 0,
 			"icon" : "images/icons/Condition_Damage.png"
 		}, {
 			"name" : "Condition Duration",
-			"value" : 0,
 			"icon" : "images/icons/Condition_Duration.png"
 		}, {
+			"name" : "Ferocity",
+			"icon" : "images/icons/Ferocity.png"
+		}, {
 			"name" : "Critical Damage",
-			"value" : 0,
 			"icon" : "images/icons/Critical_Damage.png"
 		}, {
 			"name" : "Healing Power",
-			"value" : 0,
 			"icon" : "images/icons/Healing_Power.png"
 		}, {
 			"name" : "Boon Duration",
-			"value" : 0,
 			"icon" : "images/icons/Boon_Duration.png"
 		}, {
 			"name" : "Bonus",
-			"value" : 0,
 			"icon" : "images/icons/Bonus.png"
+		}, {
+			"name" : "Effective HP",
+			"icon" : "images/icons/EHP.png"
+		}, {
+			"name" : "DPS",
+			"icon" : "images/icons/DPS.png"
 		}
 	]
 }

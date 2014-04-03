@@ -1,0 +1,140 @@
+{
+	"statTypes" : [{
+			"name" : "Berserker",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["POWER", "PRECISION", "FEROCITY"]
+		}, {
+			"name" : "Soldier",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["POWER", "TOUGHNESS", "VITALITY"]
+		}, {
+			"name" : "Valkyrie",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [false, false],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["POWER", "PRECISION", "FEROCITY"]
+		}, {
+			"name" : "Asssassin",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["PRECISION", "POWER", "FEROCITY"]
+		}, {
+			"name" : "Rampager",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["PRECISION", "POWER", "CONDITION_DAMAGE"]
+		}, {
+			"name" : "Cavalier",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["TOUGHNESS", "POWER", "FEROCITY"]
+		}, {
+			"name" : "Knight",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["TOUGHNESS", "POWER", "PRECISION"]
+		}, {
+			"name" : "Settler",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["TOUGHNESS", "CONDITION_DAMAGE", "HEALING_POWER"]
+		}, {
+			"name" : "Sentinel",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["VITALITY", "POWER", "TOUGHNESS"]
+		}, {
+			"name" : "Shaman",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["VITALITY", "HEALING_POWER", "CONDITION_DAMAGE"]
+		}, {
+			"name" : "Carrion",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["CONDITION_DAMAGE", "POWER", "VITALITY"]
+		}, {
+			"name" : "Dire",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["CONDITION_DAMAGE", "TOUGHNESS", "VITALITY"]
+		}, {
+			"name" : "Rabid",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["CONDITION_DAMAGE", "TOUGHNESS", "PRECISION"]
+		}, {
+			"name" : "Apothecary",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["HEALING_POWER", "CONDITION_DAMAGE", "TOUGHNESS"]
+		}, {
+			"name" : "Cleric",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["HEALING_POWER", "POWER", "TOUGHNESS"]
+		}, {
+			"name" : "Magi",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["HEALING_POWER", "VITALITY", "PRECISION"]
+		}, {
+			"name" : "Celestial",
+			"weapon" : [true, true],
+			"armor" : [true, true],
+			"back" : [true, true],
+			"trinket" : [true, true],
+			"jewel" : [true, false],
+			"stats" : ["POWER", "PRECISION", "TOUGHNESS", "VITALITY", "HEALING_POWER", "FEROCITY", "CONDITION_DAMAGE"]
+		}
+	]
+}

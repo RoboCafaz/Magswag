@@ -1,55 +1,53 @@
 {
-	"stats" : [{
-			"name" : "Health",
-			"icon" : "images/icons/Health.png"
-		}, {
-			"name" : "Armor",
-			"icon" : "images/icons/Armor.png"
-		}, {
-			"name" : "Attack",
-			"icon" : "images/icons/Attack.png"
-		}, {
-			"name" : "Critical Chance",
-			"icon" : "images/icons/Critical_Chance.png"
-		}, {
-			"name" : "Vitality",
-			"icon" : "images/icons/Vitality.png"
-		}, {
-			"name" : "Toughness",
-			"icon" : "images/icons/Toughness.png"
-		}, {
-			"name" : "Power",
-			"icon" : "images/icons/Power.png"
-		}, {
-			"name" : "Precision",
-			"icon" : "images/icons/Precision.png"
-		}, {
-			"name" : "Condition Damage",
-			"icon" : "images/icons/Condition_Damage.png"
-		}, {
-			"name" : "Condition Duration",
-			"icon" : "images/icons/Condition_Duration.png"
-		}, {
-			"name" : "Ferocity",
-			"icon" : "images/icons/Ferocity.png"
-		}, {
-			"name" : "Critical Damage",
-			"icon" : "images/icons/Critical_Damage.png"
-		}, {
-			"name" : "Healing Power",
-			"icon" : "images/icons/Healing_Power.png"
-		}, {
-			"name" : "Boon Duration",
-			"icon" : "images/icons/Boon_Duration.png"
-		}, {
-			"name" : "Bonus",
-			"icon" : "images/icons/Bonus.png"
-		}, {
-			"name" : "Effective HP",
-			"icon" : "images/icons/EHP.png"
-		}, {
-			"name" : "DPS",
-			"icon" : "images/icons/DPS.png"
-		}
-	]
+	"Health" : {
+		"icon" : "images/icons/Health.png"
+	},
+	"Armor" : {
+		"icon" : "images/icons/Armor.png"
+	},
+	"Attack" : {
+		"icon" : "images/icons/Attack.png"
+	},
+	"Critical Chance" : {
+		"icon" : "images/icons/Critical_Chance.png"
+	},
+	"Vitality" : {
+		"icon" : "images/icons/Vitality.png"
+	},
+	"Toughness" : {
+		"icon" : "images/icons/Toughness.png"
+	},
+	"Power" : {
+		"icon" : "images/icons/Power.png"
+	},
+	"Precision" : {
+		"icon" : "images/icons/Precision.png"
+	},
+	"Condition Damage" : {
+		"icon" : "images/icons/Condition_Damage.png"
+	},
+	"Condition Duration" : {
+		"icon" : "images/icons/Condition_Duration.png"
+	},
+	"Ferocity" : {
+		"icon" : "images/icons/Ferocity.png"
+	},
+	"Critical Damage" : {
+		"icon" : "images/icons/Critical_Damage.png"
+	},
+	"Healing Power" : {
+		"icon" : "images/icons/Healing_Power.png"
+	},
+	"Boon Duration" : {
+		"icon" : "images/icons/Boon_Duration.png"
+	},
+	"Bonus" : {
+		"icon" : "images/icons/Bonus.png"
+	},
+	"Effective HP" : {
+		"icon" : "images/icons/EHP.png"
+	},
+	"DPS" : {
+		"icon" : "images/icons/DPS.png"
+	}
 }

@@ -21,10 +21,10 @@ public class ItemFactory {
     ArmorTypes armorTypes = null;
     StatTypes statTypes = null;
     try {
-      url = "C:/dev/magswag-jv/magswag-dataloader/resource/ArmorTypes.json";
+      url = "resource/ArmorTypes.json";
       armorTypes = DataLoader.load(url, ArmorTypes.class);
 
-      url = "C:/dev/magswag-jv/magswag-dataloader/resource/StatTypes.json";
+      url = "resource/StatTypes.json";
       statTypes = DataLoader.load(url, StatTypes.class);
     } catch (FileNotFoundException e) {
       e.printStackTrace();

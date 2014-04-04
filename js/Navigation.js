@@ -1,4 +1,4 @@
-angular.module("SwagDirectory", ["ngRoute", "Swag.Controller", "Optimize.Controller"])
+angular.module("SwagNav", ["ngRoute", "MagSwag"])
 .config(["$routeProvider", function ($routeProvider) {
 			$routeProvider.when("/calc", {
 				templateUrl : "views/calc.html",
@@ -9,7 +9,11 @@ angular.module("SwagDirectory", ["ngRoute", "Swag.Controller", "Optimize.Control
 			});
 			$routeProvider.when("/optimizer", {
 				templateUrl : "views/optimizer.html",
-				controller : "OptimizeController"
+				controller : "SwagController"
+			});
+			$routeProvider.when("/items", {
+				templateUrl : "views/items.html",
+				controller : "SwagController"
 			});
 			$routeProvider.otherwise({
 				templateUrl : "views/main.html"
@@ -26,6 +30,9 @@ angular.module("SwagDirectory", ["ngRoute", "Swag.Controller", "Optimize.Control
 				}, {
 					link : "optimizer",
 					title : "Optimizer"
+				}, {
+					link : "items",
+					title : "Item List"
 				}, {
 					link : "about",
 					title : "About"

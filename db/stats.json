@@ -1,53 +1,70 @@
 {
-	"Health" : {
-		"icon" : "images/icons/Health.png"
+	"HEALTH" : {
+		"icon" : "images/icons/Health.png",
+		"name" : "Health"
 	},
-	"Armor" : {
-		"icon" : "images/icons/Armor.png"
+	"ARMOR" : {
+		"icon" : "images/icons/Armor.png",
+		"name" : "Armor"
 	},
-	"Attack" : {
-		"icon" : "images/icons/Attack.png"
+	"ATTACK" : {
+		"icon" : "images/icons/Attack.png",
+		"name" : "Attack Power"
 	},
-	"Critical Chance" : {
-		"icon" : "images/icons/Critical_Chance.png"
+	"CRITICAL_CHANCE" : {
+		"icon" : "images/icons/Critical_Chance.png",
+		"name" : "Critical Chance"
 	},
-	"Vitality" : {
-		"icon" : "images/icons/Vitality.png"
+	"VITALITY" : {
+		"icon" : "images/icons/Vitality.png",
+		"name" : "Vitality"
 	},
-	"Toughness" : {
-		"icon" : "images/icons/Toughness.png"
+	"TOUGHNESS" : {
+		"icon" : "images/icons/Toughness.png",
+		"name" : "Toughness"
 	},
-	"Power" : {
-		"icon" : "images/icons/Power.png"
+	"POWER" : {
+		"icon" : "images/icons/Power.png",
+		"name" : "Power"
 	},
-	"Precision" : {
-		"icon" : "images/icons/Precision.png"
+	"PRECISION" : {
+		"icon" : "images/icons/Precision.png",
+		"name" : "Precision"
 	},
-	"Condition Damage" : {
-		"icon" : "images/icons/Condition_Damage.png"
+	"CONDITION_DAMAGE" : {
+		"icon" : "images/icons/Condition_Damage.png",
+		"name" : "Condition Damage"
 	},
-	"Condition Duration" : {
-		"icon" : "images/icons/Condition_Duration.png"
+	"CONDITION_DURATION" : {
+		"icon" : "images/icons/Condition_Duration.png",
+		"name" : "Condition Duration"
 	},
-	"Ferocity" : {
-		"icon" : "images/icons/Ferocity.png"
+	"FEROCITY" : {
+		"icon" : "images/icons/Ferocity.png",
+		"name" : "Ferocity"
 	},
-	"Critical Damage" : {
-		"icon" : "images/icons/Critical_Damage.png"
+	"CRITICAL_DAMAGE" : {
+		"icon" : "images/icons/Critical_Damage.png",
+		"name" : "Critical Damage"
 	},
-	"Healing Power" : {
-		"icon" : "images/icons/Healing_Power.png"
+	"HEALING_POWER" : {
+		"icon" : "images/icons/Healing_Power.png",
+		"name" : "Healing Power"
 	},
-	"Boon Duration" : {
-		"icon" : "images/icons/Boon_Duration.png"
+	"BOON_DURATION" : {
+		"icon" : "images/icons/Boon_Duration.png",
+		"name" : "Boon Duration"
 	},
-	"Bonus" : {
-		"icon" : "images/icons/Bonus.png"
+	"BONUS" : {
+		"icon" : "images/icons/Bonus.png",
+		"name" : "Bonus Stat"
 	},
-	"Effective HP" : {
-		"icon" : "images/icons/EHP.png"
+	"EHP" : {
+		"icon" : "images/icons/EHP.png",
+		"name" : "Effective Health"
 	},
 	"DPS" : {
-		"icon" : "images/icons/DPS.png"
+		"icon" : "images/icons/DPS.png",
+		"name" : "Approximate Damage per Second"
 	}
 }

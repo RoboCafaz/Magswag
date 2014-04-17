@@ -5,7 +5,9 @@
 			530,
 			1030,
 			1530
-		]
+		],
+		"location" : "Maelstrom's Waypoint",
+		"link" : "[&BM0CAAA=]"
 	},
 	"Claw of Jormag" : {
 		"times" : [2230,
@@ -14,7 +16,9 @@
 			930,
 			1430,
 			1800
-		]
+		],
+		"location" : "Earthshake Waypoint",
+		"link" : "[&BHoCAAA=]"
 	},
 	"Fire Elemental" : {
 		"times" : [2045,
@@ -29,7 +33,9 @@
 			1445,
 			1645,
 			1845
-		]
+		],
+		"location" : "Muridian Waypoint",
+		"link" : "[&BEcAAAA=]"
 	},
 	"Golem Mark II" : {
 		"times" : [2130,
@@ -38,13 +44,17 @@
 			900,
 			1330,
 			1730
-		]
+		],
+		"location" : "Old Sledge Site Waypoint",
+		"link" : "[&BNQCAAA=]"
 	},
 	"Great Jungle Wurm" : {
 		"times" : [2300,
 			830,
 			1400
-		]
+		],
+		"location" : "Firthside Vigil Waypoint",
+		"link" : "[&BKoBAAA=]"
 	},
 	"Jungle Wurm" : {
 		"times" : [1915,
@@ -60,13 +70,17 @@
 			1315,
 			1515,
 			1715
-		]
+		],
+		"location" : "Falias Thorp Waypoint",
+		"link" : "[&BD4BAAA=]"
 	},
 	"Karka Queen" : {
 		"times" : [2100,
 			630,
 			1200
-		]
+		],
+		"location" : "Pearl Islet Waypoint",
+		"link" : "[&BNUGAAA=]"
 	},
 	"Modniir Ulgoth" : {
 		"times" : [2030,
@@ -75,7 +89,9 @@
 			800,
 			1230,
 			1700
-		]
+		],
+		"location" : "Barricade Camp Waypoint",
+		"link" : "[&BK0AAAA=]"
 	},
 	"Shadow Behemoth" : {
 		"times" : [1945,
@@ -90,7 +106,9 @@
 			1345,
 			1545,
 			1745
-		]
+		],
+		"location" : "Swamplost Haven Waypoint",
+		"link" : "[&BPcAAAA=]"
 	},
 	"Svanir Shaman" : {
 		"times" : [2015,
@@ -104,7 +122,9 @@
 			1415,
 			1615,
 			1815
-		]
+		],
+		"location" : "Krennak's Homestead",
+		"link" : "[&BMIDAAA=]"
 	},
 	"Taidha Covington" : {
 		"times" : [2330,
@@ -112,7 +132,9 @@
 			1000,
 			1500,
 			1830
-		]
+		],
+		"location" : "Laughing Gull Waypoint",
+		"link" : "[&BKgBAAA=]"
 	},
 	"TBD" : {
 		"times" : [1930,
@@ -120,13 +142,17 @@
 			600,
 			1100,
 			1600
-		]
+		],
+		"location" : "???",
+		"link" : "???"
 	},
 	"Tequatl" : {
 		"times" : [2200,
 			730,
 			1300
-		]
+		],
+		"location" : "Splintered Coast Waypoint",
+		"link" : "[&BNABAAA=]"
 	},
 	"The Shatterer" : {
 		"times" : [2000,
@@ -135,6 +161,8 @@
 			700,
 			1130,
 			1630
-		]
+		],
+		"location" : "Lowland Burns Waypoint",
+		"link" : "[&BE4DAAA=]"
 	}
 }

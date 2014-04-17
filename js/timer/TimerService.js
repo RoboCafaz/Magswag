@@ -2,7 +2,7 @@ angular.module("MagTimer")
 .directive("clock", function () {
 	return {
 		restrict : 'E',
-		template : "{{now | date: 'h:mm:ss a'}}",
+		template : "<div id='clock'><p>{{now | date: 'h:mm:ss a'}}</p></div>",
 		link : function ($scope, $element, $attrs) {
 			setInterval(function () {
 				$scope.now = new Date().getTime();
@@ -27,8 +27,11 @@ angular.module("MagTimer")
 				var now = new Date().getTime();
 				angular.forEach($scope.events, function (event) {
 					event.countdown = {};
-					var time = event.time - now
-						event.countdown.t = time;
+					var time = event.time - now;
+					if (time < 0) {
+						time += (24 * 60 * 60 * 1000);
+					}
+					event.countdown.t = time;
 					event.countdown.h = Math.floor(time / (60 * 60 * 1000));
 					event.countdown.m = Math.floor((time / (60 * 1000)) % 60);
 					event.countdown.s = Math.floor((time / (1000) % 60));
@@ -37,4 +40,4 @@ angular.module("MagTimer")
 			}, 1000);
 		}
 	}
-})
+});

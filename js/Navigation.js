@@ -1,4 +1,4 @@
-angular.module("SwagNav", ["ngRoute", "MagSwag", "MagTimer"])
+angular.module("SwagNav", ["ngRoute", "ui.utils", "MagSwag", "MagTimer"])
 .config(["$routeProvider", function ($routeProvider) {
 			$routeProvider.when("/calc", {
 				templateUrl : "views/calc.html",

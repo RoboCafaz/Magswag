@@ -10,6 +10,12 @@ body
 	background: #eee;
 }
 
+#clock {
+	text-align: center;
+	font-weight: bold;
+	font-size: 32px;
+}
+
 #container
 {
 	margin: 0 auto;
@@ -17,21 +23,33 @@ body
 	padding-top: 120px;
 }
 
+#table {
+	border-collapse:collapse;
+}
+
 #table ul {
 	display: table;
+	width: 100%;
 }
 
 #table li#head{
 	font-weight: bold;
-	text-align: center;
+	background-color: #f94;
 }
 
 #table li {
 	display: table-row;
+	background: #DDD;
+}
+
+#table li:nth-child(odd) {
+	background: #EEE;
 }
 
 #table span {
 	display: table-cell;
+	padding: 3px;
+	border: 1px solid #f94;
 }
 
 #header

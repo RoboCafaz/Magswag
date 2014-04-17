@@ -1,14 +1,21 @@
 <div>
-	<table>
-		<tr class="first">
-			<th>Event</th>
-			<th>Next Time</th>
-			<th>Countdown</th>
-		</tr>
-		<tr ng-repeat="event in events | orderBy:predicate:reverse">
-			<td>{{event.name}}</td>
-			<td>{{event.time | date: 'h:mm a'}}</td>
-			<td>{{event.countdown.h}}h {{event.countdown.m}}m {{event.countdown.s}}s</td>
-		</tr>
-	</table>
+	<div id="filter">
+		<select ng-model="filter" ng-options="event.name as event.name for event in events | unique:'name'">
+			<option value=""> - - - </option>
+		</select>
+	</div>
+	<div id="table">
+		<ul>
+			<li id="head">
+				<span>Event</span>
+				<span>Next Time</span>
+				<span>Countdown</span>
+			</li>
+			<li ng-repeat="event in events | orderBy:predicate:reverse | filter:filter">
+				<span>{{event.name}}</span>
+				<span>{{event.time | date: 'h:mm a'}}</span>
+				<span>{{event.countdown.h}}h {{event.countdown.m}}m {{event.countdown.s}}s</span>
+			</li>
+		</ul>
+	</div>
 </div>

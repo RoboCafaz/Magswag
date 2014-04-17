@@ -1,4 +1,4 @@
-angular.module("SwagNav", ["ngRoute", "MagSwag"])
+angular.module("SwagNav", ["ngRoute", "MagSwag", "MagTimer"])
 .config(["$routeProvider", function ($routeProvider) {
 			$routeProvider.when("/calc", {
 				templateUrl : "views/calc.html",
@@ -15,6 +15,10 @@ angular.module("SwagNav", ["ngRoute", "MagSwag"])
 				templateUrl : "views/items.html",
 				controller : "SwagController"
 			});
+			$routeProvider.when("/timer", {
+				templateUrl : "views/timer.html",
+				controller : "TimeController"
+			});
 			$routeProvider.otherwise({
 				templateUrl : "views/main.html"
 			});
@@ -24,6 +28,9 @@ angular.module("SwagNav", ["ngRoute", "MagSwag"])
 			$scope.items = [{
 					link : "",
 					title : "Home"
+				}, {
+					link : "timer",
+					title : "Event Timer"
 				}, {
 					link : "calc",
 					title : "Calculator"

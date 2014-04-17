@@ -1,168 +1,374 @@
-{
-	"Megadestroyer" : {
-		"times" : [1900,
-			0,
-			530,
-			1030,
-			1530
-		],
-		"location" : "Maelstrom's Waypoint",
-		"link" : "[&BM0CAAA=]"
-	},
-	"Claw of Jormag" : {
-		"times" : [2230,
-			230,
-			430,
-			930,
-			1430,
-			1800
+[{
+		"name" : "Claw of Jormag",
+		"times" : [{
+				"h" : 4,
+				"m" : 30
+			}, {
+				"h" : 8,
+				"m" : 30
+			}, {
+				"h" : 10,
+				"m" : 30
+			}, {
+				"h" : 15,
+				"m" : 30
+			}, {
+				"h" : 20,
+				"m" : 30
+			}, {
+				"h" : 0,
+				"m" : 0
+			}
 		],
 		"location" : "Earthshake Waypoint",
 		"link" : "[&BHoCAAA=]"
-	},
-	"Fire Elemental" : {
-		"times" : [2045,
-			2245,
-			45,
-			245,
-			445,
-			645,
-			845,
-			1045,
-			1245,
-			1445,
-			1645,
-			1845
+	}, {
+		"name" : "Fire Elemental",
+		"times" : [{
+				"h" : 2,
+				"m" : 45
+			}, {
+				"h" : 4,
+				"m" : 45
+			}, {
+				"h" : 6,
+				"m" : 45
+			}, {
+				"h" : 8,
+				"m" : 45
+			}, {
+				"h" : 10,
+				"m" : 45
+			}, {
+				"h" : 12,
+				"m" : 45
+			}, {
+				"h" : 14,
+				"m" : 45
+			}, {
+				"h" : 16,
+				"m" : 45
+			}, {
+				"h" : 18,
+				"m" : 45
+			}, {
+				"h" : 20,
+				"m" : 45
+			}, {
+				"h" : 22,
+				"m" : 45
+			}, {
+				"h" : 0,
+				"m" : 45
+			}
 		],
 		"location" : "Muridian Waypoint",
 		"link" : "[&BEcAAAA=]"
-	},
-	"Golem Mark II" : {
-		"times" : [2130,
-			200,
-			400,
-			900,
-			1330,
-			1730
+	}, {
+		"name" : "Golem Mark II",
+		"times" : [{
+				"h" : 3,
+				"m" : 30
+			}, {
+				"h" : 8,
+				"m" : 0
+			}, {
+				"h" : 10,
+				"m" : 0
+			}, {
+				"h" : 15,
+				"m" : 0
+			}, {
+				"h" : 19,
+				"m" : 30
+			}, {
+				"h" : 23,
+				"m" : 30
+			}
 		],
 		"location" : "Old Sledge Site Waypoint",
 		"link" : "[&BNQCAAA=]"
-	},
-	"Great Jungle Wurm" : {
-		"times" : [2300,
-			830,
-			1400
+	}, {
+		"name" : "Great Jungle Wurm",
+		"times" : [{
+				"h" : 5,
+				"m" : 0
+			}, {
+				"h" : 14,
+				"m" : 30
+			}, {
+				"h" : 20,
+				"m" : 0
+			}
 		],
 		"location" : "Firthside Vigil Waypoint",
 		"link" : "[&BKoBAAA=]"
-	},
-	"Jungle Wurm" : {
-		"times" : [1915,
-			2115,
-			2315,
-			115,
-			315,
-			515,
-			715,
-			915,
-			1015,
-			1115,
-			1315,
-			1515,
-			1715
+	}, {
+		"name" : "Jungle Wurm",
+		"times" : [{
+				"h" : 1,
+				"m" : 15
+			}, {
+				"h" : 3,
+				"m" : 15
+			}, {
+				"h" : 5,
+				"m" : 15
+			}, {
+				"h" : 7,
+				"m" : 15
+			}, {
+				"h" : 9,
+				"m" : 15
+			}, {
+				"h" : 11,
+				"m" : 15
+			}, {
+				"h" : 13,
+				"m" : 15
+			}, {
+				"h" : 15,
+				"m" : 15
+			}, {
+				"h" : 16,
+				"m" : 15
+			}, {
+				"h" : 17,
+				"m" : 15
+			}, {
+				"h" : 19,
+				"m" : 15
+			}, {
+				"h" : 21,
+				"m" : 15
+			}, {
+				"h" : 23,
+				"m" : 15
+			}
 		],
 		"location" : "Falias Thorp Waypoint",
 		"link" : "[&BD4BAAA=]"
-	},
-	"Karka Queen" : {
-		"times" : [2100,
-			630,
-			1200
+	}, {
+		"name" : "Karka Queen",
+		"times" : [{
+				"h" : 3,
+				"m" : 0
+			}, {
+				"h" : 12,
+				"m" : 30
+			}, {
+				"h" : 18,
+				"m" : 0
+			}
 		],
 		"location" : "Pearl Islet Waypoint",
 		"link" : "[&BNUGAAA=]"
-	},
-	"Modniir Ulgoth" : {
-		"times" : [2030,
-			130,
-			330,
-			800,
-			1230,
-			1700
+	}, {
+		"name" : "Megadestroyer",
+		"times" : [{
+				"h" : 1,
+				"m" : 0
+			}, {
+				"h" : 6,
+				"m" : 0
+			}, {
+				"h" : 11,
+				"m" : 30
+			}, {
+				"h" : 16,
+				"m" : 30
+			}, {
+				"h" : 21,
+				"m" : 30
+			}
+		],
+		"location" : "Maelstrom's Waypoint",
+		"link" : "[&BM0CAAA=]"
+	}, {
+		"name" : "Modniir Ulgoth",
+		"times" : [{
+				"h" : 2,
+				"m" : 30
+			}, {
+				"h" : 7,
+				"m" : 30
+			}, {
+				"h" : 9,
+				"m" : 30
+			}, {
+				"h" : 14,
+				"m" : 0
+			}, {
+				"h" : 18,
+				"m" : 30
+			}, {
+				"h" : 23,
+				"m" : 0
+			}
 		],
 		"location" : "Barricade Camp Waypoint",
 		"link" : "[&BK0AAAA=]"
-	},
-	"Shadow Behemoth" : {
-		"times" : [1945,
-			2145,
-			2345,
-			145,
-			345,
-			545,
-			745,
-			945,
-			1145,
-			1345,
-			1545,
-			1745
+	}, {
+		"name" : "Shadow Behemoth",
+		"times" : [{
+				"h" : 1,
+				"m" : 45
+			}, {
+				"h" : 3,
+				"m" : 45
+			}, {
+				"h" : 5,
+				"m" : 45
+			}, {
+				"h" : 7,
+				"m" : 45
+			}, {
+				"h" : 9,
+				"m" : 45
+			}, {
+				"h" : 11,
+				"m" : 45
+			}, {
+				"h" : 13,
+				"m" : 45
+			}, {
+				"h" : 15,
+				"m" : 45
+			}, {
+				"h" : 17,
+				"m" : 45
+			}, {
+				"h" : 19,
+				"m" : 45
+			}, {
+				"h" : 21,
+				"m" : 45
+			}, {
+				"h" : 23,
+				"m" : 45
+			}
 		],
 		"location" : "Swamplost Haven Waypoint",
 		"link" : "[&BPcAAAA=]"
-	},
-	"Svanir Shaman" : {
-		"times" : [2015,
-			2215,
-			15,
-			215,
-			415,
-			615,
-			815,
-			1215,
-			1415,
-			1615,
-			1815
+	}, {
+		"name" : "Svanir Shaman",
+		"times" : [{
+				"h" : 2,
+				"m" : 15
+			}, {
+				"h" : 4,
+				"m" : 15
+			}, {
+				"h" : 6,
+				"m" : 15
+			}, {
+				"h" : 8,
+				"m" : 15
+			}, {
+				"h" : 10,
+				"m" : 15
+			}, {
+				"h" : 12,
+				"m" : 15
+			}, {
+				"h" : 14,
+				"m" : 15
+			}, {
+				"h" : 18,
+				"m" : 15
+			}, {
+				"h" : 20,
+				"m" : 15
+			}, {
+				"h" : 22,
+				"m" : 15
+			}, {
+				"h" : 0,
+				"m" : 15
+			}
 		],
 		"location" : "Krennak's Homestead",
 		"link" : "[&BMIDAAA=]"
-	},
-	"Taidha Covington" : {
-		"times" : [2330,
-			500,
-			1000,
-			1500,
-			1830
+	}, {
+		"name" : "Taidha Covington",
+		"times" : [{
+				"h" : 5,
+				"m" : 30
+			}, {
+				"h" : 11,
+				"m" : 0
+			}, {
+				"h" : 16,
+				"m" : 0
+			}, {
+				"h" : 21,
+				"m" : 0
+			}, {
+				"h" : 0,
+				"m" : 30
+			}
 		],
 		"location" : "Laughing Gull Waypoint",
 		"link" : "[&BKgBAAA=]"
-	},
-	"TBD" : {
-		"times" : [1930,
-			30,
-			600,
-			1100,
-			1600
+	}, {
+		"name" : "TBD",
+		"times" : [{
+				"h" : 1,
+				"m" : 30
+			}, {
+				"h" : 6,
+				"m" : 30
+			}, {
+				"h" : 12,
+				"m" : 0
+			}, {
+				"h" : 17,
+				"m" : 0
+			}, {
+				"h" : 22,
+				"m" : 0
+			}
 		],
 		"location" : "???",
 		"link" : "???"
-	},
-	"Tequatl" : {
-		"times" : [2200,
-			730,
-			1300
+	}, {
+		"name" : "Tequatl",
+		"times" : [{
+				"h" : 4,
+				"m" : 0
+			}, {
+				"h" : 13,
+				"m" : 30
+			}, {
+				"h" : 19,
+				"m" : 0
+			}
 		],
 		"location" : "Splintered Coast Waypoint",
 		"link" : "[&BNABAAA=]"
-	},
-	"The Shatterer" : {
-		"times" : [2000,
-			100,
-			300,
-			700,
-			1130,
-			1630
+	}, {
+		"name" : "The Shatterer",
+		"times" : [{
+				"h" : 2,
+				"m" : 0
+			}, {
+				"h" : 7,
+				"m" : 0
+			}, {
+				"h" : 9,
+				"m" : 0
+			}, {
+				"h" : 13,
+				"m" : 0
+			}, {
+				"h" : 17,
+				"m" : 30
+			}, {
+				"h" : 22,
+				"m" : 30
+			}
 		],
 		"location" : "Lowland Burns Waypoint",
 		"link" : "[&BE4DAAA=]"
 	}
-}
+]

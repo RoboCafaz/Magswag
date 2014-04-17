@@ -1,1 +1,1 @@
-angular.module('MagTimer', []);
+angular.module("MagTimer", []);

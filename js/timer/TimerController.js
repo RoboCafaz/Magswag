@@ -30,7 +30,6 @@ angular.module("MagTimer")
 						});
 					});
 				});
-				$scope.events.length = 0;
 			};
 		}
 	]);

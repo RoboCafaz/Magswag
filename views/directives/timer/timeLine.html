@@ -10,11 +10,15 @@
 				<span>Event</span>
 				<span>Next Time</span>
 				<span>Countdown</span>
+				<span>Location</span>
+				<span>Waypoint Code</span>
 			</li>
 			<li ng-repeat="event in events | orderBy:predicate:reverse | filter:filter">
 				<span>{{event.name}}</span>
 				<span>{{event.time | date: 'h:mm a'}}</span>
 				<span>{{event.countdown.h}}h {{event.countdown.m}}m {{event.countdown.s}}s</span>
+				<span>{{event.location}}</span>
+				<span>{{event.link}}</span>
 			</li>
 		</ul>
 	</div>

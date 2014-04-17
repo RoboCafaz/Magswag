@@ -14,7 +14,6 @@ angular.module("MagTimer")
 				var midnight = date.getTime();
 				var tomorrow = 24 * 60 * 60 * 1000;
 				angular.forEach($scope.events, function (event) {
-					console.log(event);
 					event.realTimes = [];
 					angular.forEach(event.times, function (time) {
 						var adjusted = midnight;
@@ -25,10 +24,13 @@ angular.module("MagTimer")
 						}
 						$scope.timeline.push({
 							"name" : event.name,
-							"time" : adjusted
+							"time" : adjusted,
+							"location" : event.location,
+							"link" : event.link
 						});
 					});
 				});
+				$scope.events.length = 0;
 			};
 		}
 	]);

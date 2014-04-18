@@ -1,8 +1,11 @@
 <div>
 	<div id="filter">
-		<select ng-model="filter" ng-options="event.name as event.name for event in events | unique:'name'">
-			<option value=""> - - - </option>
-		</select>
+		<h3>
+			Filter:
+			<select ng-model="filter" ng-options="event.name as event.name for event in events | unique:'name'">
+				<option value=""> - - - </option>
+			</select>
+		</h3> 
 	</div>
 	<div id="table">
 		<ul>
@@ -10,15 +13,15 @@
 				<span>Event</span>
 				<span>Next Time</span>
 				<span>Countdown</span>
-				<span>Location</span>
 				<span>Waypoint Code</span>
+				<span>Location</span>
 			</li>
 			<li ng-repeat="event in events | orderBy:predicate:reverse | filter:filter">
 				<span>{{event.name}}</span>
 				<span>{{event.time | date: 'h:mm a'}}</span>
-				<span>{{event.countdown.h}}h {{event.countdown.m}}m {{event.countdown.s}}s</span>
+				<span>{{event.countdown.h | paddedNumber:2}}h {{event.countdown.m| paddedNumber:2}}m {{event.countdown.s| paddedNumber:2}}s</span>
+				<span class="monospaced" select-on-click>{{event.link}}</span>
 				<span>{{event.location}}</span>
-				<span>{{event.link}}</span>
 			</li>
 		</ul>
 	</div>

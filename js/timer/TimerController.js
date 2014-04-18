@@ -1,6 +1,7 @@
 angular.module("MagTimer")
 .controller("TimeController", ["$scope", "Events", function ($scope, Events) {
 			$scope.timeline = [];
+			$scope.offset = -6;
 
 			Events.then(function (data) {
 				$scope.events = data;
@@ -17,6 +18,13 @@ angular.module("MagTimer")
 					event.realTimes = [];
 					angular.forEach(event.times, function (time) {
 						var adjusted = midnight;
+
+						time.h += $scope.offset;
+						if (time.h < 0) {
+							time.h += 24;
+						} else if (time.h > 23) {
+							time.h -= 24;
+						}
 						adjusted += time.m * 60 * 1000;
 						adjusted += time.h * 60 * 60 * 1000;
 						if (adjusted < now) {

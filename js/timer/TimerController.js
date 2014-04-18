@@ -1,7 +1,13 @@
 angular.module("MagTimer")
 .controller("TimeController", ["$scope", "Events", function ($scope, Events) {
 			$scope.timeline = [];
-			$scope.offset = -6;
+			var now = new Date();
+			$scope.offset = -60 - now.getTimezoneOffset();
+			if (now.dst()) {
+				$scope.offset -= 60;
+				console.debug("Detected DST!");
+			}
+			console.debug("Detected timezone offset of " + $scope.offset);
 
 			Events.then(function (data) {
 				$scope.events = data;
@@ -19,17 +25,11 @@ angular.module("MagTimer")
 					angular.forEach(event.times, function (time) {
 						var adjusted = midnight;
 
-						time.h += $scope.offset;
-						if (time.h < 0) {
-							time.h += 24;
-						} else if (time.h > 23) {
-							time.h -= 24;
-						}
+						time.m += $scope.offset;
+						time.m += time.h * 60;
+
 						adjusted += time.m * 60 * 1000;
-						adjusted += time.h * 60 * 60 * 1000;
-						if (adjusted < now) {
-							adjusted += tomorrow;
-						}
+						
 						$scope.timeline.push({
 							"name" : event.name,
 							"time" : adjusted,

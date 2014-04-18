@@ -18,6 +18,20 @@ angular.module("SwagNav")
 		}
 	};
 })
+.directive('companyName', function () {
+	return {
+		restrict : 'E',
+		template : '{{name}}',
+		link : function ($scope, $element, $attrs) {
+			var items = [
+				"LLC", "Co.", "Inc.", "Enterprises", "Institute of Technology",
+				"Institute of Techlology", "Institute", "College", "and Sons",
+				"and Son", "and Haikuus", "and K-Pop", "Esq.", "Offices", "Technical Institute",
+				"Sr.", "Jr.", "Booties", "and Company", "& Knuckles", "feat. Lil' Jon"];
+			$scope.name = items[Math.floor(Math.random() * items.length)]; ;
+		}
+	}
+})
 .filter('paddedNumber', function () {
 	return function (n, len) {
 		var num = parseInt(n, 10);

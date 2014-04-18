@@ -8,6 +8,7 @@ body
 {
 	font-family: "Verdana", Arial, Sans-serif;
 	background: #eee;
+	border-collapse:collapse;
 }
 
 .monospaced{
@@ -27,8 +28,8 @@ body
 	padding-top: 120px;
 }
 
-#table {
-	border-collapse:collapse;
+#table .fixed {
+    table-layout: fixed;
 }
 
 #table ul {
@@ -54,6 +55,10 @@ body
 	display: table-cell;
 	padding: 3px;
 	border: 1px solid #f94;
+}
+
+#event-info{
+	border: 2px dashed #f94;
 }
 
 #header

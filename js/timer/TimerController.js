@@ -34,7 +34,13 @@ angular.module("MagTimer")
 							"name" : event.name,
 							"time" : adjusted,
 							"location" : event.location,
-							"link" : event.link
+							"link" : event.link,
+							"countdown" : {
+								"h" : 0,
+								"m" : 0,
+								"s" : 0
+							},
+							"running" : false
 						});
 					});
 				});

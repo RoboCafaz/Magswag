@@ -1,0 +1,7 @@
+<span id="event-info">
+	<h1>{{event.name}}</h1>
+	<h2>{{getEventStatus()}}</h2>
+	<p ng-hide="event.countdown.h != 0">{{event.countdown.h | paddedNumber:2}}h {{event.countdown.m| paddedNumber:2}}m {{event.countdown.s| paddedNumber:2}}s</p>
+	<p>{{event.location}}</p>
+	<p class="monospaced" select-on-click>{{event.link}}</p>
+</span>

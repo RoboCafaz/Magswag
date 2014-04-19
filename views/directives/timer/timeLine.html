@@ -2,20 +2,25 @@
 	<div id="table" class="fixed">
 		<ul>
 			<li>
-				<event-info id="left-column" event="lastEvent">
+				<event-info id="left-column" event="lastEvent" chest="chests[lastEvent.id]">
 				</event-info>
-				<event-info id="right-column" event="nextEvent">
+				<event-info id="right-column" event="nextEvent" chest="chests[nextEvent.id]">
 				</event-info>
 			</li>
 		</ul>
 	</div>
-	<div id="filter">
-		<h3>
-			Filter:
-			<select ng-model="filter" ng-options="event.name as event.name for event in events | unique:'name'">
-				<option value=""> - - - </option>
-			</select>
-		</h3> 
+	<div>
+		<div class="left">
+			<h3>
+				Filter:
+				<select ng-model="filter" ng-options="event.name as event.name for event in events | unique:'name'">
+					<option value=""> - - - </option>
+				</select>
+			</h3> 
+		</div>
+		<div class="right">
+			<button ng-click="clearChests()">Clear Chests</button>
+		</div>
 	</div>
 	<div id="table">
 		<ul>
@@ -25,13 +30,15 @@
 				<span>Countdown</span>
 				<span>Waypoint Code</span>
 				<span>Location</span>
+				<span>Complete?</span>
 			</li>
-			<li ng-repeat="event in events | orderBy:predicate:reverse | filter:filter">
+			<li ng-repeat="event in events | orderBy:predicate:reverse | filter:filter" ng-class="finishedString(event)">
 				<span>{{event.name}}</span>
 				<span>{{event.time | date: 'h:mm a'}}</span>
 				<span>{{event.countdown.h | paddedNumber:2}}h {{event.countdown.m| paddedNumber:2}}m {{event.countdown.s| paddedNumber:2}}s</span>
 				<span class="monospaced" select-on-click>{{event.link}}</span>
 				<span>{{event.location}}</span>
+				<span><input ng-model="chests[event.id]" type="checkbox">Chest</input></span>
 			</li>
 		</ul>
 	</div>

@@ -1,4 +1,5 @@
 [{
+		"id" : 0,
 		"name" : "Claw of Jormag",
 		"times" : [{
 				"h" : 4,
@@ -23,6 +24,7 @@
 		"location" : "Earthshake Waypoint",
 		"link" : "[&BHoCAAA=]"
 	}, {
+		"id" : 1,
 		"name" : "Fire Elemental",
 		"times" : [{
 				"h" : 2,
@@ -65,6 +67,7 @@
 		"location" : "Muridian Waypoint",
 		"link" : "[&BEcAAAA=]"
 	}, {
+		"id" : 2,
 		"name" : "Golem Mark II",
 		"times" : [{
 				"h" : 3,
@@ -89,6 +92,7 @@
 		"location" : "Old Sledge Site Waypoint",
 		"link" : "[&BNQCAAA=]"
 	}, {
+		"id" : 3,
 		"name" : "Great Jungle Wurm",
 		"times" : [{
 				"h" : 5,
@@ -104,6 +108,7 @@
 		"location" : "Firthside Vigil Waypoint",
 		"link" : "[&BKoBAAA=]"
 	}, {
+		"id" : 4,
 		"name" : "Jungle Wurm",
 		"times" : [{
 				"h" : 1,
@@ -149,6 +154,7 @@
 		"location" : "Falias Thorp Waypoint",
 		"link" : "[&BD4BAAA=]"
 	}, {
+		"id" : 5,
 		"name" : "Karka Queen",
 		"times" : [{
 				"h" : 3,
@@ -164,6 +170,7 @@
 		"location" : "Pearl Islet Waypoint",
 		"link" : "[&BNUGAAA=]"
 	}, {
+		"id" : 6,
 		"name" : "Megadestroyer",
 		"times" : [{
 				"h" : 1,
@@ -185,6 +192,7 @@
 		"location" : "Maelstrom's Waypoint",
 		"link" : "[&BM0CAAA=]"
 	}, {
+		"id" : 7,
 		"name" : "Modniir Ulgoth",
 		"times" : [{
 				"h" : 2,
@@ -209,6 +217,7 @@
 		"location" : "Barricade Camp Waypoint",
 		"link" : "[&BK0AAAA=]"
 	}, {
+		"id" : 8,
 		"name" : "Shadow Behemoth",
 		"times" : [{
 				"h" : 1,
@@ -251,6 +260,7 @@
 		"location" : "Swamplost Haven Waypoint",
 		"link" : "[&BPcAAAA=]"
 	}, {
+		"id" : 9,
 		"name" : "Svanir Shaman",
 		"times" : [{
 				"h" : 2,
@@ -290,6 +300,7 @@
 		"location" : "Krennak's Homestead",
 		"link" : "[&BMIDAAA=]"
 	}, {
+		"id" : 10,
 		"name" : "Taidha Covington",
 		"times" : [{
 				"h" : 5,
@@ -311,6 +322,7 @@
 		"location" : "Laughing Gull Waypoint",
 		"link" : "[&BKgBAAA=]"
 	}, {
+		"id" : 11,
 		"name" : "TBD",
 		"times" : [{
 				"h" : 1,
@@ -332,6 +344,7 @@
 		"location" : "???",
 		"link" : "???"
 	}, {
+		"id" : 12,
 		"name" : "Tequatl",
 		"times" : [{
 				"h" : 4,
@@ -347,6 +360,7 @@
 		"location" : "Splintered Coast Waypoint",
 		"link" : "[&BNABAAA=]"
 	}, {
+		"id" : 13,
 		"name" : "The Shatterer",
 		"times" : [{
 				"h" : 2,

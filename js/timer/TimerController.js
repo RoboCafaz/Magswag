@@ -1,5 +1,5 @@
 angular.module("MagTimer")
-.controller("TimeController", ["$scope", "Events", function ($scope, Events) {
+.controller("TimeController", ["$scope", "Events", "ChestStorage", function ($scope, Events, ChestStorage) {
 			$scope.timeline = [];
 			var now = new Date();
 			$scope.offset = -60 - now.getTimezoneOffset();
@@ -11,7 +11,19 @@ angular.module("MagTimer")
 
 			Events.then(function (data) {
 				$scope.events = data;
+				var chestLoaded = ChestStorage.load();
+				if (chestLoaded == null) {
+					$scope.chests = new Array($scope.events.length);
+				} else {
+					$scope.chests = chestLoaded;
+				}
 				normalizeEvents();
+			});
+
+			$scope.$watchCollection("chests", function () {
+				if ($scope.chests != null) {
+					ChestStorage.save($scope.chests);
+				}
 			});
 
 			normalizeEvents = function () {
@@ -28,9 +40,14 @@ angular.module("MagTimer")
 						time.m += $scope.offset;
 						time.m += time.h * 60;
 
+						if (time.m < 0) {
+							time.m += 24 * 60;
+						}
+
 						adjusted += time.m * 60 * 1000;
-						
+
 						$scope.timeline.push({
+							"id" : event.id,
 							"name" : event.name,
 							"time" : adjusted,
 							"location" : event.location,

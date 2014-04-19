@@ -28,6 +28,14 @@ body
 	padding-top: 120px;
 }
 
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
 #table .fixed {
     table-layout: fixed;
 }
@@ -49,6 +57,14 @@ body
 
 #table li:nth-child(odd) {
 	background: #EEE;
+}
+
+#table .complete-event{
+	background: #FFD;
+}
+
+#table :nth-child(odd).complete-event{
+	background: #FFE;
 }
 
 #table span {

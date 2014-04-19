@@ -16,6 +16,7 @@ angular.module("MagTimer")
 		restrict : 'E',
 		scope : {
 			events : '=',
+			chests : '=',
 		},
 		templateUrl : 'views/directives/timer/timeLine.html',
 		replace : true,
@@ -24,6 +25,19 @@ angular.module("MagTimer")
 			$scope.reverse = false;
 			$scope.lastEvent = $scope.events[0];
 			$scope.nextEvent = $scope.events[1];
+
+			$scope.finishedString = function (event) {
+				if ($scope.chests[event.id] === true) {
+					return "complete-event";
+				}
+			};
+
+			$scope.clearChests = function () {
+				var r = confirm("Are you sure you want to clear all your rewards for the day?");
+				if (r == true) {
+					$scope.chests = new Array($scope.chests.length);
+				}
+			};
 
 			setInterval(function () {
 				var now = new Date().getTime();
@@ -58,15 +72,56 @@ angular.module("MagTimer")
 		}
 	}
 })
+.factory("ChestStorage", [function () {
+			var self = {};
+			self.load = function (chests) {
+				var loaded = localStorage.chests;
+				if(loaded == null){
+					return;
+				}
+				var results = new Array(loaded.length);
+				for (var i = 0; i < loaded.length; i++) {
+					if (loaded[i] === "1") {
+						results[i] = true;
+					} else {
+						results[i] = false;
+					}
+				}
+				console.log("Loaded");
+				console.log(loaded);
+				return results;
+			};
+			self.save = function (chests) {
+				var string = "";
+				for (var i = 0; i < chests.length; i++) {
+					var value = chests[i];
+					if (value === true) {
+						string += "1";
+					} else {
+						string += "0";
+					}
+				}
+				localStorage.chests = string;
+				console.log("saved : " + string);
+			};
+			return self;
+		}
+	])
 .directive("eventInfo", function () {
 	return {
 		restrict : 'E',
 		scope : {
 			event : '=',
+			chest : '=',
 		},
 		templateUrl : 'views/directives/timer/eventInfo.html',
 		replace : true,
 		link : function ($scope, $element, $attrs) {
+			$scope.finishedString = function (event) {
+				if ($scope.chest === true) {
+					return "complete-event";
+				}
+			};
 			$scope.getEventStatus = function () {
 				if ($scope.event == null) {
 					return "???";

@@ -30,10 +30,16 @@ body
 
 .left{
 	float: left;
+	clear: left;
 }
 
 .right{
 	float: right;
+	clear: right;
+}
+
+.clear {
+	clear: both;
 }
 
 #table .fixed {

@@ -75,8 +75,16 @@ angular.module("MagTimer")
 .factory("ChestStorage", [function () {
 			var self = {};
 			self.load = function (chests) {
+				var time = localStorage.time;
+				var date;
+				if (time != null) {
+					date = new Date(parseInt(time));
+				} else {
+					date = new Date();
+				}
+				console.log("Last visit was " + date);
 				var loaded = localStorage.chests;
-				if(loaded == null){
+				if (loaded == null) {
 					return;
 				}
 				var results = new Array(loaded.length);
@@ -102,7 +110,9 @@ angular.module("MagTimer")
 					}
 				}
 				localStorage.chests = string;
-				console.log("saved : " + string);
+				var time = new Date().getTime();
+				localStorage.time = time;
+				console.log("saved : " + string + " @" + new Date(time));
 			};
 			return self;
 		}

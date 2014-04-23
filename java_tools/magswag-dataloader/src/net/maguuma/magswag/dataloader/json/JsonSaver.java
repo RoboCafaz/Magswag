@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-public class DataSaver {
+public class JsonSaver {
   public static String saveData(String fileName, String contents) throws IOException {
     File file = new File(fileName);
     file.createNewFile();

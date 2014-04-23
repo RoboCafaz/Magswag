@@ -1,0 +1,212 @@
+{
+	"professions" : [{
+			"name" : "Warrior",
+			"armor" : "HEAVY",
+			"hp" : "HIGH",
+			"traits" : [{
+					"name" : "Strength",
+					"primary" : "POWER",
+					"secondary" : "CONDITION_DURATION"
+				}, {
+					"name" : "Arms",
+					"primary" : "PRECISION",
+					"secondary" : "CONDITION_DAMAGE"
+				}, {
+					"name" : "Defenses",
+					"primary" : "TOUGHNESS",
+					"secondary" : "HEALING_POWER"
+				}, {
+					"name" : "Tactics",
+					"primary" : "VITALITY",
+					"secondary" : "BOON_DURATION"
+				}, {
+					"name" : "Discipline",
+					"primary" : "BONUS",
+					"secondary" : "FEROCITY"
+				}
+			]
+		}, {
+			"name" : "Guardian",
+			"armor" : "HEAVY",
+			"hp" : "LOW",
+			"traits" : [{
+					"name" : "Zeal",
+					"primary" : "POWER",
+					"secondary" : "CONDITION_DURATION"
+				}, {
+					"name" : "Radiance",
+					"primary" : "PRECISION",
+					"secondary" : "CONDITION_DAMAGE"
+				}, {
+					"name" : "Valor",
+					"primary" : "TOUGHNESS",
+					"secondary" : "FEROCITY"
+				}, {
+					"name" : "Honor",
+					"primary" : "VITALITY",
+					"secondary" : "HEALING_POWER"
+				}, {
+					"name" : "Virtues",
+					"primary" : "BONUS",
+					"secondary" : "BOON_DURATION"
+				}
+			]
+		}, {
+			"name" : "Thief",
+			"armor" : "MEDIUM",
+			"hp" : "LOW",
+			"traits" : [{
+					"name" : "Deadly Arts",
+					"primary" : "POWER",
+					"secondary" : "CONDITION_DURATION"
+				}, {
+					"name" : "Critical Strikes",
+					"primary" : "PRECISION",
+					"secondary" : "FEROCITY"
+				}, {
+					"name" : "Shadow Arts",
+					"primary" : "TOUGHNESS",
+					"secondary" : "HEALING_POWER"
+				}, {
+					"name" : "Acrobatics",
+					"primary" : "VITALITY",
+					"secondary" : "BOON_DURATION"
+				}, {
+					"name" : "Trickery",
+					"primary" : "BONUS",
+					"secondary" : "CONDITION_DAMAGE"
+				}
+			]
+		}, {
+			"name" : "Ranger",
+			"armor" : "MEDIUM",
+			"hp" : "MEDIUM",
+			"traits" : [{
+					"name" : "Marksmanship",
+					"primary" : "POWER",
+					"secondary" : "CONDITION_DURATION"
+				}, {
+					"name" : "Skirmishing",
+					"primary" : "PRECISION",
+					"secondary" : "FEROCITY"
+				}, {
+					"name" : "Wilderness Survival",
+					"primary" : "TOUGHNESS",
+					"secondary" : "CONDITION_DAMAGE"
+				}, {
+					"name" : "Nature Magic",
+					"primary" : "VITALITY",
+					"secondary" : "BOON_DURATION"
+				}, {
+					"name" : "Beastmastery",
+					"primary" : "BONUS",
+					"secondary" : "HEALING_POWER"
+				}
+			]
+		}, {
+			"name" : "Engineer",
+			"armor" : "MEDIUM",
+			"hp" : "MEDIUM",
+			"traits" : [{
+					"name" : "Explosives",
+					"primary" : "POWER",
+					"secondary" : "CONDITION_DURATION"
+				}, {
+					"name" : "Firearms",
+					"primary" : "PRECISION",
+					"secondary" : "CONDITION_DAMAGE"
+				}, {
+					"name" : "Inventions",
+					"primary" : "TOUGHNESS",
+					"secondary" : "HEALING_POWER"
+				}, {
+					"name" : "Alchemy",
+					"primary" : "VITALITY",
+					"secondary" : "BOON_DURATION"
+				}, {
+					"name" : "Tools",
+					"primary" : "BONUS",
+					"secondary" : "FEROCITY"
+				}
+			]
+		}, {
+			"name" : "Elementalist",
+			"armor" : "LIGHT",
+			"hp" : "LOW",
+			"traits" : [{
+					"name" : "Fire Magic",
+					"primary" : "POWER",
+					"secondary" : "CONDITION_DURATION"
+				}, {
+					"name" : "Air Magic",
+					"primary" : "PRECISION",
+					"secondary" : "FEROCITY"
+				}, {
+					"name" : "Earth Magic",
+					"primary" : "TOUGHNESS",
+					"secondary" : "CONDITION_DAMAGE"
+				}, {
+					"name" : "Water Magic",
+					"primary" : "VITALITY",
+					"secondary" : "HEALING_POWER"
+				}, {
+					"name" : "Arcana",
+					"primary" : "BONUS",
+					"secondary" : "BOON_DURATION"
+				}
+			]
+		}, {
+			"name" : "Mesmer",
+			"armor" : "LIGHT",
+			"hp" : "MEDIUM",
+			"traits" : [{
+					"name" : "Domination",
+					"primary" : "POWER",
+					"secondary" : "CONDITION_DURATION"
+				}, {
+					"name" : "Dueling",
+					"primary" : "PRECISION",
+					"secondary" : "FEROCITY"
+				}, {
+					"name" : "Chaos",
+					"primary" : "TOUGHNESS",
+					"secondary" : "BOON_DURATION"
+				}, {
+					"name" : "Inspiration",
+					"primary" : "VITALITY",
+					"secondary" : "HEALING_POWER"
+				}, {
+					"name" : "Illusions",
+					"primary" : "BONUS",
+					"secondary" : "CONDITION_DAMAGE"
+				}
+			]
+		}, {
+			"name" : "Necromancer",
+			"armor" : "LIGHT",
+			"hp" : "HIGH",
+			"traits" : [{
+					"name" : "Spite",
+					"primary" : "POWER",
+					"secondary" : "CONDITION_DURATION"
+				}, {
+					"name" : "Curses",
+					"primary" : "PRECISION",
+					"secondary" : "CONDITION_DAMAGE"
+				}, {
+					"name" : "Death Magic",
+					"primary" : "TOUGHNESS",
+					"secondary" : "BOON_DURATION"
+				}, {
+					"name" : "Blood Magic",
+					"primary" : "VITALITY",
+					"secondary" : "HEALING_POWER"
+				}, {
+					"name" : "Soul Reaping",
+					"primary" : "BONUS",
+					"secondary" : "FEROCITY"
+				}
+			]
+		}
+	]
+}

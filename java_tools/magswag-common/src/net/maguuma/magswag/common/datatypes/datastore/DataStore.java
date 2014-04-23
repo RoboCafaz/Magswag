@@ -1,10 +1,11 @@
 package net.maguuma.magswag.common.datatypes.datastore;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.List;
 
 public class DataStore<E> {
-  private final Collection<E> data = new HashSet<E>();
+  private final List<E> data = new ArrayList<E>();
 
   public void addDatum(E datum) {
     this.data.add(datum);
@@ -16,7 +17,7 @@ public class DataStore<E> {
     }
   }
 
-  public Collection<E> getData() {
+  public List<E> getData() {
     return this.data;
   }
 }

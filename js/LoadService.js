@@ -1,20 +1,4 @@
 angular.module("SwagNav")
-.factory("Health", ["QueryFor", function (QueryFor) {
-			return QueryFor('health', 'db/health.json');
-		}
-	])
-.factory("Professions", ["QueryFor", function (QueryFor) {
-			return QueryFor('Professions', 'db/professions.json');
-		}
-	])
-.factory("Stats", ["QueryFor", function (QueryFor) {
-			return QueryFor('Stats', 'db/stats.json');
-		}
-	])
-.factory("Items", ["QueryFor", function (QueryFor) {
-			return QueryFor('Items', 'db/items.json');
-		}
-	])
 .factory("Events", ["QueryFor", function (QueryFor) {
 			return QueryFor('events', 'db/events.json');
 		}

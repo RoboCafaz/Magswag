@@ -1,19 +1,7 @@
 angular.module("SwagNav", ["ngRoute", "ui.utils", "MagSwag", "MagTimer"])
 .config(["$routeProvider", function ($routeProvider) {
-			$routeProvider.when("/calc", {
-				templateUrl : "views/calc.html",
-				controller : "SwagController"
-			});
 			$routeProvider.when("/about", {
 				templateUrl : "views/about.html"
-			});
-			$routeProvider.when("/optimizer", {
-				templateUrl : "views/optimizer.html",
-				controller : "SwagController"
-			});
-			$routeProvider.when("/items", {
-				templateUrl : "views/items.html",
-				controller : "SwagController"
 			});
 			$routeProvider.when("/timer", {
 				templateUrl : "views/timer.html",
@@ -31,15 +19,6 @@ angular.module("SwagNav", ["ngRoute", "ui.utils", "MagSwag", "MagTimer"])
 				}, {
 					link : "timer",
 					title : "Event Timer"
-				}, {
-					link : "calc",
-					title : "Calculator"
-				}, {
-					link : "optimizer",
-					title : "Optimizer"
-				}, {
-					link : "items",
-					title : "Item List"
 				}, {
 					link : "about",
 					title : "About"

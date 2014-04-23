@@ -1,6 +1,7 @@
 package net.maguuma.magswag.gui.professions;
 
 import java.awt.GridLayout;
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import net.maguuma.magswag.common.datatypes.datastore.DataHandler;
 import net.maguuma.magswag.common.datatypes.professions.Profession;
@@ -18,6 +19,7 @@ public class ProfessionPanel extends JPanel {
   }
 
   private void performLayout() {
+    this.setBorder(BorderFactory.createTitledBorder("Profession"));
     this.setLayout(new GridLayout());
     for (Profession profession : DataHandler.PROFESSIONS.getData()) {
       this.add(new ProfessionButton(profession));

@@ -11,5 +11,6 @@ public class Runner {
     frame.add(new SwagInterface());
     frame.pack();
     frame.setVisible(true);
+    frame.setMinimumSize(frame.getPreferredSize());
   }
 }

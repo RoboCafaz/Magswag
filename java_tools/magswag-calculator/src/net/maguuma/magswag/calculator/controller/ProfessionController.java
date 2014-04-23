@@ -5,18 +5,20 @@ import java.util.Set;
 import net.maguuma.magswag.calculator.controller.listener.ProfessionChangeListener;
 import net.maguuma.magswag.common.datatypes.professions.Profession;
 
-public class CharacterController {
+public class ProfessionController {
+  // -- Profession Logic
+
   private static Set<ProfessionChangeListener> professionChangeListeners = new HashSet<ProfessionChangeListener>();
 
   private static Profession profession;
 
   public static Profession getProfession() {
-    return CharacterController.profession;
+    return ProfessionController.profession;
   }
 
   public static void setProfession(Profession profession) {
-    Profession oldProfession = CharacterController.profession;
-    CharacterController.profession = profession;
+    Profession oldProfession = ProfessionController.profession;
+    ProfessionController.profession = profession;
     fireProfessionChanged(oldProfession, profession);
   }
 

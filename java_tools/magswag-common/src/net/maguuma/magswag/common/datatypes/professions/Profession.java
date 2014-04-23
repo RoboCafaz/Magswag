@@ -9,6 +9,7 @@ public class Profession {
   private Weight armor;
   private Health hp;
   private Icon icon;
+  private Trait[] traits;
 
   public Profession() {
   }
@@ -23,6 +24,10 @@ public class Profession {
 
   public int getHealth() {
     return this.hp.getHealth();
+  }
+
+  public Trait[] getTraits() {
+    return this.traits;
   }
 
   public void setIcon(Icon icon) {

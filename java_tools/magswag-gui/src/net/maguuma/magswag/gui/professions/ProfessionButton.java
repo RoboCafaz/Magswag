@@ -3,7 +3,7 @@ package net.maguuma.magswag.gui.professions;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JToggleButton;
-import net.maguuma.magswag.calculator.controller.CharacterController;
+import net.maguuma.magswag.calculator.controller.ProfessionController;
 import net.maguuma.magswag.calculator.controller.listener.ProfessionChangeListener;
 import net.maguuma.magswag.common.datatypes.professions.Profession;
 
@@ -14,7 +14,7 @@ public class ProfessionButton extends JToggleButton implements ProfessionChangeL
   public ProfessionButton(Profession profession) {
     super(profession.getIcon());
     this.profession = profession;
-    CharacterController.addProfessionChangeListener(this);
+    ProfessionController.addProfessionChangeListener(this);
     this.addActionListener(createActionListener());
   }
 
@@ -23,7 +23,7 @@ public class ProfessionButton extends JToggleButton implements ProfessionChangeL
     return new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        CharacterController.setProfession(ProfessionButton.this.profession);
+        ProfessionController.setProfession(ProfessionButton.this.profession);
       }
     };
   }

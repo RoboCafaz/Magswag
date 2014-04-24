@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import net.maguuma.magswag.common.logging.Logger;
 
 public class ImageLoader {
   private static final BufferedImage FALLBACK;
@@ -23,7 +24,7 @@ public class ImageLoader {
     try {
       img = ImageIO.read(new File(filename));
     } catch (IOException e) {
-      e.printStackTrace();
+      Logger.error("Could not load image '" + filename + "' due to exception:", e);
     }
     if (img == null) {
       img = FALLBACK;

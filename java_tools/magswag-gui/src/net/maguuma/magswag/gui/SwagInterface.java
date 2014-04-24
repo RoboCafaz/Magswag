@@ -4,7 +4,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import net.maguuma.magswag.calculator.controller.ProfessionController;
 import net.maguuma.magswag.common.datatypes.datastore.DataHandler;
-import net.maguuma.magswag.dataloader.json.profession.ProfessionLoader;
+import net.maguuma.magswag.dataloader.json.loader.Loaders;
+import net.maguuma.magswag.gui.equipment.EquipmentPanel;
 import net.maguuma.magswag.gui.professions.ProfessionPanel;
 import net.maguuma.magswag.gui.traits.TraitsPanel;
 
@@ -17,7 +18,7 @@ public class SwagInterface extends JPanel {
   }
 
   private void initialize() {
-    ProfessionLoader.loadProfessions();
+    Loaders.loadData();
     ProfessionController.setProfession(DataHandler.PROFESSIONS.getData().iterator().next());
   }
 
@@ -25,5 +26,6 @@ public class SwagInterface extends JPanel {
     this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
     this.add(new ProfessionPanel());
     this.add(new TraitsPanel());
+    this.add(new EquipmentPanel());
   }
 }

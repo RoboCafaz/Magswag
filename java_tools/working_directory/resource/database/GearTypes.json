@@ -1,61 +1,61 @@
 {
-	"armorTypes" : [{
-			"slot" : "HELMET",
+	"gearTypes" : [{
+			"type" : "HELMET",
 			"armor" : [[77, 97, 121], [77, 102, 127]],
 			"stats" : [[45, 32], [47, 34]],
 			"celestial" : [20, 21]
 		}, {
-			"slot" : "CHEST",
+			"type" : "CHEST",
 			"armor" : [[314, 338, 363], [330, 355, 381]],
 			"stats" : [[101, 72], [106, 76]],
 			"celestial" : [45, 47]
 		}, {
-			"slot" : "LEGS",
+			"type" : "LEGS",
 			"armor" : [[194, 218, 242], [203, 229, 254]],
 			"stats" : [[67, 48], [71, 50]],
 			"celestial" : [30, 31]
 		}, {
-			"slot" : "SHOULDERS",
+			"type" : "SHOULDERS",
 			"armor" : [[73, 97, 121], [77, 102, 127]],
 			"stats" : [[34, 24], [35, 25]],
 			"celestial" : [15, 16]
 		}, {
-			"slot" : "GLOVES",
+			"type" : "GLOVES",
 			"armor" : [[133, 157, 182], [140, 165, 191]],
 			"stats" : [[34, 24], [35, 25]],
 			"celestial" : [15, 16]
 		}, {
-			"slot" : "BOOTS",
+			"type" : "BOOTS",
 			"armor" : [[133, 157, 182], [140, 165, 191]],
 			"stats" : [[34, 24], [35, 25]],
 			"celestial" : [15, 16]
 		}, {
-			"slot" : "TWO_HANDED_WEAPON",
+			"type" : "TWO_HANDED_WEAPON",
 			"stats" : [[179, 128, 9], [188, 134, 10]],
 			"celestial" : [79, 83]
 		}, {
-			"slot" : "ONE_HANDED_WEAPON",
+			"type" : "ONE_HANDED_WEAPON",
 			"stats" : [[90, 64], [94, 67]],
 			"celestial" : [40, 42]
 		}, {
-			"slot" : "SHIELD",
+			"type" : "SHIELD",
 			"armor" : [[61, 61, 61], [64, 64, 64]],
 			"stats" : [[90, 64], [94, 67]],
 			"celestial" : [40, 42]
 		}, {
-			"slot" : "BACK",
+			"type" : "BACK",
 			"stats" : [[22, 16], [56, 35]],
 			"celestial" : [20, 22]
 		}, {
-			"slot" : "ACCESSORY",
+			"type" : "ACCESSORY",
 			"stats" : [[56, 40], [91, 60]],
 			"celestial" : [15, 38]
 		}, {
-			"slot" : "AMULET",
+			"type" : "AMULET",
 			"stats" : [[90, 64], [126, 85]],
 			"celestial" : [15, 54]
 		}, {
-			"slot" : "RING",
+			"type" : "RING",
 			"stats" : [[67, 48], [103, 68]],
 			"celestial" : [30, 43]
 		}

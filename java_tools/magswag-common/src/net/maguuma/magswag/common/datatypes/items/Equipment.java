@@ -1,17 +1,27 @@
 package net.maguuma.magswag.common.datatypes.items;
 
-import net.maguuma.magswag.common.constants.Rarity;
-import net.maguuma.magswag.common.constants.Slot;
+import net.maguuma.magswag.common.constants.EquipmentType;
 
-public class Equipment extends Item {
-  protected Rarity rarity;
+public class Equipment {
+  private final EquipmentType type;
+  private final StatType stats;
+  private final boolean ascended;
 
-  public Equipment(String name, Slot slot, Rarity rarity) {
-    super(name, slot);
-    this.rarity = rarity;
+  public Equipment(EquipmentType type, StatType stats, boolean ascended) {
+    this.type = type;
+    this.stats = stats;
+    this.ascended = ascended;
   }
 
-  public Rarity getRarity() {
-    return this.rarity;
+  public EquipmentType getEquipmentType() {
+    return this.type;
+  }
+
+  public StatType getStatType() {
+    return this.stats;
+  }
+
+  public boolean isAscended() {
+    return this.ascended;
   }
 }

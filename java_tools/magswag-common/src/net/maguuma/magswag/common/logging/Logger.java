@@ -1,5 +1,7 @@
 package net.maguuma.magswag.common.logging;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.Date;
 
 public class Logger {
@@ -26,6 +28,20 @@ public class Logger {
 
   public static void debug(String info) {
     log(DEBUG, info);
+  }
+
+  public static void error(String info, Exception e) {
+    StringWriter sw = new StringWriter();
+    PrintWriter pw = new PrintWriter(sw);
+    e.printStackTrace(pw);
+    String stack = sw.toString();
+
+    StringBuilder sb = new StringBuilder();
+    sb.append(info);
+    sb.append("\n");
+    sb.append(stack);
+    info = sb.toString();
+    log(ERROR, info);
   }
 
   public static void error(String info) {

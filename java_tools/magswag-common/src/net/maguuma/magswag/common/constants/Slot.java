@@ -1,7 +1,6 @@
 package net.maguuma.magswag.common.constants;
 
 import java.util.Arrays;
-import java.util.List;
 
 public enum Slot {
   HELMET(EquipmentType.HELMET),
@@ -19,17 +18,17 @@ public enum Slot {
   MAIN_HAND(EquipmentType.ONE_HANDED_WEAPON, EquipmentType.TWO_HANDED_WEAPON),
   OFF_HAND(EquipmentType.ONE_HANDED_WEAPON, EquipmentType.SHIELD);
 
-  private final List<EquipmentType> types;
+  EquipmentType[] types;
 
   private Slot(EquipmentType... types) {
-    this.types = Arrays.asList(types);
+    this.types = types;
   }
 
   public boolean applicable(EquipmentType type) {
-    return this.types.contains(type);
+    return Arrays.asList(this.types).contains(type);
   }
 
-  public List<EquipmentType> getTypes() {
+  public EquipmentType[] getTypes() {
     return this.types;
   }
 }

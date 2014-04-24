@@ -8,7 +8,7 @@ import net.maguuma.magswag.calculator.controller.listener.EquipmentChangeListene
 import net.maguuma.magswag.common.constants.Slot;
 import net.maguuma.magswag.common.datatypes.items.Equipment;
 
-public class GearController {
+public class EquipmentController {
   private static Map<Slot, Equipment> gear = new HashMap<Slot, Equipment>();
 
   private static Set<EquipmentChangeListener> listeners = new HashSet<EquipmentChangeListener>();
@@ -32,11 +32,11 @@ public class GearController {
     }
   }
 
-  public void addEquipmentChangeListener(EquipmentChangeListener listener) {
+  public static void addEquipmentChangeListener(EquipmentChangeListener listener) {
     listeners.add(listener);
   }
 
-  public void removeEquipmentChangeListener(EquipmentChangeListener listener) {
+  public static void removeEquipmentChangeListener(EquipmentChangeListener listener) {
     listeners.remove(listener);
   }
 }

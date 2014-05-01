@@ -13,23 +13,18 @@ import net.maguuma.magswag.common.datatypes.items.GearType;
 import net.maguuma.magswag.common.datatypes.items.StatType;
 
 @SuppressWarnings("serial")
-public class EquipmentModel extends DefaultTableModel {
-  private final GearType gearType;
-  private final Rarity rarity;
+public class EquipmentSelectionModel extends DefaultTableModel {
 
   private final List<Equipment> equipment;
 
-  public EquipmentModel(GearType gearType, Rarity rarity) {
+  public EquipmentSelectionModel() {
     this.equipment = new ArrayList<Equipment>();
-    this.gearType = gearType;
-    this.rarity = rarity;
-
-    initialize();
   }
 
-  private void initialize() {
+  public void setGear(GearType gearType, Rarity rarity) {
+    this.equipment.clear();
     for (StatType statType : DataHandler.STAT_TYPES.getData()) {
-      this.equipment.add(new Equipment(this.gearType, ProfessionController.getProfession().getArmor(), statType, this.rarity));
+      this.equipment.add(new Equipment(gearType, ProfessionController.getProfession().getArmor(), statType, rarity));
     }
   }
 

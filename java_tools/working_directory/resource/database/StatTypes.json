@@ -10,7 +10,7 @@
 		}, {
 			"name" : "Valkyrie",
 			"equipmentTypes" : ["HELMET", "SHOULDERS", "CHEST", "GLOVES", "LEGS", "BOOTS", "BACK", "ACCESSORY", "RING", "AMULET", "ONE_HANDED_WEAPON", "TWO_HANDED_WEAPON", "SHIELD"],
-			"stats" : ["POWER", "PRECISION", "FEROCITY"]
+			"stats" : ["POWER", "VITALITY", "FEROCITY"]
 		}, {
 			"name" : "Asssassin",
 			"equipmentTypes" : ["HELMET", "SHOULDERS", "CHEST", "GLOVES", "LEGS", "BOOTS", "BACK", "ACCESSORY", "RING", "AMULET", "ONE_HANDED_WEAPON", "TWO_HANDED_WEAPON", "SHIELD"],

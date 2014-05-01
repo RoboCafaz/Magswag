@@ -6,37 +6,39 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.table.TableRowSorter;
 import net.maguuma.magswag.common.constants.Rarity;
-import net.maguuma.magswag.common.datatypes.datastore.DataHandler;
+import net.maguuma.magswag.common.constants.Slot;
 import net.maguuma.magswag.common.datatypes.items.GearType;
+import net.maguuma.magswag.gui.equipment.table.controller.EquipmentSelectionController;
+import net.maguuma.magswag.gui.equipment.table.controller.EquipmentSelectionListener;
 
 @SuppressWarnings("serial")
-public class EquipmentSelectionPanel extends JPanel {
+public class EquipmentSelectionPanel extends JPanel implements EquipmentSelectionListener {
   private JTable table;
 
   public EquipmentSelectionPanel() {
     initialize();
     performLayout();
+    EquipmentSelectionController.addEquipmentSelectionListener(this);
   }
 
   private void initialize() {
+    this.table = new JTable();
   }
 
   private void performLayout() {
-    this.setBorder(BorderFactory.createTitledBorder("Equipment List"));
     this.setLayout(new BorderLayout());
-
-    loadNewTable(DataHandler.GEAR_TYPES.getData().get(0), Rarity.EXOTIC);
-  }
-
-  private void loadNewTable(GearType gearType, Rarity rarity) {
-    this.removeAll();
-    this.table = new JTable();
-    this.table.setModel(new EquipmentModel(gearType, rarity));
     JScrollPane scroll = new JScrollPane(this.table);
     scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
     this.add(scroll, BorderLayout.CENTER);
-    this.revalidate();
-    this.repaint();
+  }
+
+  @Override
+  public void equipmentSelectionChanged(Slot slot, GearType gearType, Rarity rarity) {
+    this.setBorder(BorderFactory.createTitledBorder(gearType.getEquipmentType().name() + " Equipment List"));
+    EquipmentModel model = new EquipmentModel(gearType, rarity);
+    this.table.setModel(model);
+    this.table.setRowSorter(new TableRowSorter<EquipmentModel>(model));
   }
 }

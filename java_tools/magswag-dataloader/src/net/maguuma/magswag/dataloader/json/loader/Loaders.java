@@ -64,10 +64,12 @@ public class Loaders {
       Collections.sort(sortedGear, new Comparator<GearType>() {
         @Override
         public int compare(GearType o1, GearType o2) {
-          return o1.getSlot().compareTo(o2.getSlot());
+          return o1.getEquipmentType().compareTo(o2.getEquipmentType());
         }
       });
-      DataHandler.GEAR_TYPES.addData(sortedGear);
+      for (GearType piece : sortedGear) {
+        DataHandler.GEAR_TYPES.addDatum(piece.getEquipmentType(), piece);
+      }
     }
   }
 }

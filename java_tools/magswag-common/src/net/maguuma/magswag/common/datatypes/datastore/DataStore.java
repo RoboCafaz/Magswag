@@ -1,23 +1,21 @@
 package net.maguuma.magswag.common.datatypes.datastore;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class DataStore<E> {
-  private final List<E> data = new ArrayList<E>();
+public class DataStore<I, E> {
+  protected final Map<I, E> data = new HashMap<I, E>();
 
-  public void addDatum(E datum) {
-    this.data.add(datum);
+  public void addDatum(I index, E datum) {
+    this.data.put(index, datum);
   }
 
-  public void addData(Collection<E> data) {
-    for (E datum : data) {
-      addDatum(datum);
-    }
+  public E get(I index) {
+    return this.data.get(index);
   }
 
-  public List<E> getData() {
-    return this.data;
+  public Collection<E> getData() {
+    return this.data.values();
   }
 }

@@ -38,18 +38,18 @@ public class Equipment {
   }
 
   private void assignStats() {
-    boolean celestial = (this.statType.getStats().length == 6);
+    boolean celestial = (this.statType.getStats().length == 7);
     boolean secondary = false;
     for (Stat stat : this.statType.getStats()) {
       int value = 0;
       if (celestial) {
-        value = this.type.getCelestialSTats(this.rarity);
+        value = this.type.getCelestialStats(this.rarity);
       } else {
         value = this.type.getStats(this.rarity, secondary);
       }
       this.stats.put(stat, value);
       secondary = true;
     }
-    this.stats.put(Stat.ARMOR, this.type.getArmor(this.rarity, this.weight));
+    this.stats.put(Stat.DEFENSE, this.type.getArmor(this.rarity, this.weight));
   }
 }

@@ -1,7 +1,6 @@
 package net.maguuma.magswag.gui;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import net.maguuma.magswag.calculator.controller.ProfessionController;
 import net.maguuma.magswag.common.datatypes.datastore.DataHandler;
@@ -26,28 +25,15 @@ public class SwagInterface extends JPanel {
   }
 
   private void performLayout() {
-    this.setLayout(new GridBagLayout());
-
-    GridBagConstraints constraints = new GridBagConstraints();
-    constraints.fill = GridBagConstraints.BOTH;
-    this.add(new ProfessionPanel(), constraints);
-
-    constraints.gridy = 1;
-    this.add(new TraitsPanel(), constraints);
-
-    constraints.gridy = 2;
-    this.add(new WeightPanel(), constraints);
-
-    constraints = new GridBagConstraints();
-    constraints.fill = GridBagConstraints.BOTH;
-    constraints.gridheight = 3;
-    this.add(new EquipmentPanel(), constraints);
-
-    constraints.gridheight = 1;
-    this.add(new EquipmentSelectionPanel(), constraints);
-
-    constraints.gridy = 1;
-    constraints.gridheight = 2;
-    this.add(new WeightPanel(), constraints);
+    this.setLayout(new BorderLayout());
+    JPanel topPanel = new JPanel();
+    JPanel classPanel = new JPanel(new BorderLayout());
+    classPanel.add(new ProfessionPanel(), BorderLayout.NORTH);
+    classPanel.add(new TraitsPanel(), BorderLayout.CENTER);
+    topPanel.add(classPanel);
+    topPanel.add(new WeightPanel());
+    topPanel.add(new EquipmentPanel());
+    add(topPanel, BorderLayout.NORTH);
+    add(new EquipmentSelectionPanel(), BorderLayout.CENTER);
   }
 }

@@ -10,11 +10,14 @@ public class GearType {
   private int[][] stats;
   private int[] celestial;
 
-  public EquipmentType getSlot() {
+  public EquipmentType getEquipmentType() {
     return this.type;
   }
 
   public int getArmor(Rarity rarity, Weight weight) {
+    if (this.armor == null) {
+      return 0;
+    }
     return this.armor[rarity.ordinal()][weight.ordinal()];
   }
 
@@ -26,7 +29,7 @@ public class GearType {
     return this.stats[rarity.ordinal()][ordinal];
   }
 
-  public int getCelestialSTats(Rarity rarity) {
+  public int getCelestialStats(Rarity rarity) {
     return this.celestial[rarity.ordinal()];
   }
 }

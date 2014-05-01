@@ -3,6 +3,7 @@ package net.maguuma.magswag.gui.equipment.table;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import net.maguuma.magswag.calculator.WeightCalculator;
 import net.maguuma.magswag.calculator.controller.ProfessionController;
 import net.maguuma.magswag.common.constants.Rarity;
 import net.maguuma.magswag.common.constants.Stat;
@@ -34,12 +35,7 @@ public class EquipmentModel extends DefaultTableModel {
 
   @Override
   public int getColumnCount() {
-    return 1 + Stat.values().length;
-  }
-
-  @Override
-  public Class<?> getColumnClass(int col) {
-    return String.class;
+    return 2 + Stat.values().length;
   }
 
   @Override
@@ -47,9 +43,19 @@ public class EquipmentModel extends DefaultTableModel {
     switch (col) {
     case 0:
       return "Type";
-    default:
-      return Stat.values()[col - 1].name();
+    case 1:
+      return "Value";
     }
+    return Stat.values()[col - 2].name();
+  }
+
+  @Override
+  public Class<?> getColumnClass(int col) {
+    switch (col) {
+    case 0:
+      return String.class;
+    }
+    return Integer.class;
   }
 
   @Override
@@ -66,8 +72,10 @@ public class EquipmentModel extends DefaultTableModel {
     switch (col) {
     case 0:
       return equip.getStatType().getName();
+    case 1:
+      return WeightCalculator.calculateWeight(equip);
     default:
-      return equip.getStats().get(Stat.values()[col - 1]);
+      return equip.getStats().get(Stat.values()[col - 2]);
     }
   }
 

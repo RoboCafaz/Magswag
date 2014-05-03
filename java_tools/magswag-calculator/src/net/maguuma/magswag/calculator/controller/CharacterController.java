@@ -47,7 +47,7 @@ public class CharacterController implements TraitChangeListener, ProfessionChang
 
 	    double baseDamage = newStats.get(Stat.POWER);
 	    double critChance = (100 + newStats.get(Stat.CRITICAL_CHANCE)) / 100.0;
-	    double critDamage = (150 + newStats.get(Stat.CRITICAL_DAMAGE)) / 100.0;
+	    double critDamage = (newStats.get(Stat.CRITICAL_DAMAGE)) / 100.0;
 	    newStats.add(Stat.EFFECTIVE_POWER, (int) Math.floor(baseDamage * (critChance * critDamage)));
 
 		stats = newStats;

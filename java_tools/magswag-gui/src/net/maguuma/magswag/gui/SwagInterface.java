@@ -2,10 +2,13 @@ package net.maguuma.magswag.gui;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
 import net.maguuma.magswag.calculator.controller.ProfessionController;
 import net.maguuma.magswag.common.datatypes.datastore.DataHandler;
 import net.maguuma.magswag.dataloader.json.loader.Loaders;
 import net.maguuma.magswag.gui.equipment.EquipmentPanel;
+import net.maguuma.magswag.gui.equipment.stats.StatsPanel;
 import net.maguuma.magswag.gui.equipment.table.EquipmentSelectionPanel;
 import net.maguuma.magswag.gui.professions.ProfessionPanel;
 import net.maguuma.magswag.gui.traits.TraitsPanel;
@@ -26,14 +29,19 @@ public class SwagInterface extends JPanel {
 
   private void performLayout() {
     this.setLayout(new BorderLayout());
-    JPanel topPanel = new JPanel();
-    JPanel classPanel = new JPanel(new BorderLayout());
-    classPanel.add(new ProfessionPanel(), BorderLayout.NORTH);
-    classPanel.add(new TraitsPanel(), BorderLayout.CENTER);
-    topPanel.add(classPanel);
-    topPanel.add(new WeightPanel());
-    topPanel.add(new EquipmentPanel());
-    add(topPanel, BorderLayout.NORTH);
-    add(new EquipmentSelectionPanel(), BorderLayout.CENTER);
+    JTabbedPane tabbed = new JTabbedPane();
+    JPanel profs = new JPanel(new BorderLayout());
+    profs.add(new ProfessionPanel(), BorderLayout.NORTH);
+    profs.add(new TraitsPanel(), BorderLayout.CENTER);
+    tabbed.addTab("Profession and Traits", profs);
+    
+    JPanel stats = new JPanel(new BorderLayout());
+    stats.add(new WeightPanel(), BorderLayout.WEST);
+    stats.add(new EquipmentPanel(), BorderLayout.CENTER);
+    stats.add(new StatsPanel(), BorderLayout.EAST);
+    stats.add(new EquipmentSelectionPanel(), BorderLayout.SOUTH);
+    tabbed.addTab("Gear and Stats", stats);
+    
+    this.add(tabbed,BorderLayout.CENTER);
   }
 }

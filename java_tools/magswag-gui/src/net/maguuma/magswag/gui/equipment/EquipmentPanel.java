@@ -17,10 +17,25 @@ public class EquipmentPanel extends JPanel {
   }
 
   private void performLayout() {
-    this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-    this.setBorder(BorderFactory.createTitledBorder("Equipment"));
+	    this.setBorder(BorderFactory.createTitledBorder("Equipment"));
+    this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
+    
+    int i = 0;
+    JPanel current = null;
     for (Slot slot : Slot.values()) {
-      this.add(new SlotPanel(slot));
+    	if(current == null || i >= 6){
+    		i = 0;
+    		current= createNewColumn();
+    		this.add(current);
+    	}
+    	current.add(new SlotPanel(slot));
+    	i++;
     }
+  }
+  
+  private JPanel createNewColumn(){
+	  JPanel panel = new JPanel();
+	  panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+	  return panel;
   }
 }

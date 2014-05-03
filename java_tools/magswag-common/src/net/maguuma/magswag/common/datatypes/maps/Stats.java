@@ -6,6 +6,11 @@ import net.maguuma.magswag.common.logging.Logger;
 
 @SuppressWarnings("serial")
 public class Stats extends HashMap<Stat, Integer> {
+	public Integer add(Stat stat, Integer value){
+		value += get(stat);
+		return super.put(stat,value);
+	}
+	
   @Override
   public Integer put(Stat stat, Integer value) {
     if (stat.isComplex()) {

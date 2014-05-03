@@ -7,6 +7,7 @@ import java.util.Set;
 import net.maguuma.magswag.calculator.controller.listener.EquipmentChangeListener;
 import net.maguuma.magswag.common.constants.Slot;
 import net.maguuma.magswag.common.datatypes.items.Equipment;
+import net.maguuma.magswag.common.logging.Logger;
 
 public class EquipmentController {
   private static Map<Slot, Equipment> gear = new HashMap<Slot, Equipment>();
@@ -22,6 +23,7 @@ public class EquipmentController {
   }
 
   public static void setGear(Slot slot, Equipment equip) {
+	  Logger.log(slot.name() + " changed to " + equip.getRarity() + " " + equip.getStatType().getName() + " " + equip.getGearType().getEquipmentType().name());
     gear.put(slot, equip);
     fireGearChanged(slot, equip);
   }

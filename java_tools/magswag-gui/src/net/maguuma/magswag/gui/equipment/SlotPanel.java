@@ -7,6 +7,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
+
+import net.maguuma.magswag.calculator.controller.EquipmentController;
 import net.maguuma.magswag.calculator.controller.listener.EquipmentChangeListener;
 import net.maguuma.magswag.common.constants.EquipmentType;
 import net.maguuma.magswag.common.constants.Rarity;
@@ -38,6 +40,7 @@ public class SlotPanel extends JPanel implements EquipmentChangeListener, Equipm
     this.typeSelection.addActionListener(createChangeListener());
     this.selectionButton = new JToggleButton("None");
     this.selectionButton.addActionListener(createChangeListener());
+    EquipmentController.addEquipmentChangeListener(this);
     EquipmentSelectionController.addEquipmentSelectionListener(this);
   }
 

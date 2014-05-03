@@ -16,6 +16,7 @@ public class ProfessionButton extends JToggleButton implements ProfessionChangeL
     this.profession = profession;
     ProfessionController.addProfessionChangeListener(this);
     this.addActionListener(createActionListener());
+    this.setSelected(ProfessionController.getProfession() == this.profession);
   }
 
   @Override

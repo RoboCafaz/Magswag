@@ -17,39 +17,44 @@ public class Equipment {
     this.type = type;
     this.statType = statType;
     this.rarity = rarity;
-    this.stats = new Stats();
+    stats = new Stats();
     assignStats();
   }
 
   public GearType getGearType() {
-    return this.type;
+    return type;
   }
 
   public StatType getStatType() {
-    return this.statType;
+    return statType;
   }
 
   public Rarity getRarity() {
-    return this.rarity;
+    return rarity;
   }
 
   public Stats getStats() {
-    return this.stats;
+    return stats;
   }
 
   private void assignStats() {
-    boolean celestial = (this.statType.getStats().length == 7);
+    boolean celestial = (statType.getStats().length == 7);
     boolean secondary = false;
-    for (Stat stat : this.statType.getStats()) {
+    for (Stat stat : statType.getStats()) {
       int value = 0;
       if (celestial) {
-        value = this.type.getCelestialStats(this.rarity);
+        value = type.getCelestialStats(rarity);
       } else {
-        value = this.type.getStats(this.rarity, secondary);
+        value = type.getStats(rarity, secondary);
       }
-      this.stats.put(stat, value);
+      stats.put(stat, value);
       secondary = true;
     }
-    this.stats.put(Stat.DEFENSE, this.type.getArmor(this.rarity, this.weight));
+    stats.put(Stat.DEFENSE, type.getArmor(rarity, weight));
+  }
+
+  @Override
+  public String toString() {
+    return getRarity().name() + " " + getStatType().getName() + " " + getGearType().getEquipmentType().name();
   }
 }

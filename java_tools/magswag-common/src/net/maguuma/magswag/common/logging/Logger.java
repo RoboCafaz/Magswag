@@ -3,14 +3,31 @@ package net.maguuma.magswag.common.logging;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Logger {
   private static final String ERROR = "Error";
   private static final String DEBUG = "Debug";
   private static final String WARN = "Warning";
   private static final String TRACE = "Trace";
+  private static final String INFO = "Info";
+
+  private static final Map<String, Boolean> ENABLED = new HashMap<String, Boolean>();
+
+  static {
+    ENABLED.put(ERROR, true);
+    ENABLED.put(DEBUG, false);
+    ENABLED.put(WARN, true);
+    ENABLED.put(TRACE, true);
+    ENABLED.put(INFO, true);
+  }
 
   public static void log(String type, String info) {
+    Boolean okay = ENABLED.get(type);
+    if (okay != null && okay == false) {
+      return;
+    }
     StringBuilder sb = new StringBuilder();
     sb.append("[");
     sb.append(new Date());
@@ -28,6 +45,10 @@ public class Logger {
 
   public static void debug(String info) {
     log(DEBUG, info);
+  }
+
+  public static void info(String info) {
+    log(INFO, info);
   }
 
   public static void error(String info, Exception e) {

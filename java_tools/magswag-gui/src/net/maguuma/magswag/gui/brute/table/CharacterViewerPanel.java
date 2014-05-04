@@ -1,8 +1,8 @@
-package net.maguuma.magswag.gui.equipment.table;
+package net.maguuma.magswag.gui.brute.table;
 
 import java.awt.BorderLayout;
+import java.util.Map.Entry;
 
-import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -12,39 +12,35 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.TableRowSorter;
 
+import net.maguuma.magswag.calculator.character.Character;
 import net.maguuma.magswag.calculator.controller.CharacterController;
 import net.maguuma.magswag.calculator.controller.WeightController;
 import net.maguuma.magswag.calculator.controller.listener.WeightChangeListener;
-import net.maguuma.magswag.common.constants.Rarity;
 import net.maguuma.magswag.common.constants.Slot;
 import net.maguuma.magswag.common.constants.Stat;
 import net.maguuma.magswag.common.datatypes.items.Equipment;
-import net.maguuma.magswag.common.datatypes.items.GearType;
-import net.maguuma.magswag.gui.equipment.table.controller.EquipmentSelectionController;
-import net.maguuma.magswag.gui.equipment.table.controller.EquipmentSelectionListener;
+import net.maguuma.magswag.common.logging.Logger;
 
 @SuppressWarnings("serial")
-public class EquipmentSelectionPanel extends JPanel implements EquipmentSelectionListener, WeightChangeListener {
-  private Slot currentSlot;
+public class CharacterViewerPanel extends JPanel implements WeightChangeListener {
   private JTable table;
-  private EquipmentSelectionModel model;
-  private TableRowSorter<EquipmentSelectionModel> sorter;
+  private CharacterViewerModel model;
+  private TableRowSorter<CharacterViewerModel> sorter;
 
-  public EquipmentSelectionPanel() {
+  public CharacterViewerPanel() {
     initialize();
     performLayout();
   }
 
   private void initialize() {
     table = new JTable();
-    model = new EquipmentSelectionModel();
-    sorter = new TableRowSorter<EquipmentSelectionModel>(model);
+    model = new CharacterViewerModel();
+    sorter = new TableRowSorter<CharacterViewerModel>(model);
     table.setModel(model);
     table.setRowSorter(sorter);
 
     table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     table.getSelectionModel().addListSelectionListener(createListSelectionListener());
-    EquipmentSelectionController.addEquipmentSelectionListener(this);
     WeightController.addWeightChangeListener(this);
   }
 
@@ -60,6 +56,12 @@ public class EquipmentSelectionPanel extends JPanel implements EquipmentSelectio
     table.repaint();
   }
 
+  public void updateTableModel() {
+    model.setCharacters(CharacterController.getCharacters());
+    table.getSelectionModel().clearSelection();
+    updateTableValues();
+  }
+
   protected ListSelectionListener createListSelectionListener() {
     return new ListSelectionListener() {
       @Override
@@ -67,20 +69,14 @@ public class EquipmentSelectionPanel extends JPanel implements EquipmentSelectio
         int row = table.getSelectedRow();
         if (row != -1) {
           row = sorter.convertRowIndexToModel(row);
-          Equipment equip = model.getRowValue(row);
-          CharacterController.getCharacter().getEquipmentModel().setGear(currentSlot, equip);
+          Character character = model.getRowValue(row);
+          Logger.info("-- Character -- ");
+          for (Entry<Slot, Equipment> entry : character.getEquipmentModel().getGear().entrySet()) {
+            Logger.info(entry.getKey() + " - " + entry.getValue());
+          }
         }
       }
     };
-  }
-
-  @Override
-  public void equipmentSelectionChanged(Slot slot, GearType gearType, Rarity rarity) {
-    currentSlot = slot;
-    setBorder(BorderFactory.createTitledBorder(gearType.getEquipmentType().name() + " Equipment List"));
-    model.setGear(gearType, rarity);
-    table.getSelectionModel().clearSelection();
-    updateTableValues();
   }
 
   @Override

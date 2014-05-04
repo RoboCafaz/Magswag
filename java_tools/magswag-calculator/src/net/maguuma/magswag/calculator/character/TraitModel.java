@@ -13,6 +13,12 @@ public class TraitModel {
   private final Set<TraitChangeListener> traitChangeListeners = new HashSet<TraitChangeListener>();
   private final int[] traits = new int[5];
 
+  public void setTraits(int[] traits) {
+    for (int i = 0; i < traits.length; i++) {
+      this.traits[i] = traits[i];
+    }
+  }
+
   public int[] getTraits() {
     return traits;
   }

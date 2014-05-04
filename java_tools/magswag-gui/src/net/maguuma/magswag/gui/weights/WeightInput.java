@@ -23,7 +23,7 @@ public class WeightInput extends JPanel {
   }
 
   private void initialize() {
-    spinnerModel = new SpinnerNumberModel(10, 0, 100, 1);
+    spinnerModel = new SpinnerNumberModel(0, 0, 100, 1);
     spinnerModel.addChangeListener(createChangeListener());
     updateWeightController();
   }

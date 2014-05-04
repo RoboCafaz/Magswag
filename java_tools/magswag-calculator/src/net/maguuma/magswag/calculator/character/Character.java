@@ -49,6 +49,8 @@ public class Character implements TraitChangeListener, ProfessionChangeListener,
 
   public void recalculate() {
     Stats newStats = new Stats();
+
+    // TODO: Add traits
     newStats.add(Stat.POWER, 916);
     newStats.add(Stat.PRECISION, 916);
     newStats.add(Stat.TOUGHNESS, 916);
@@ -71,6 +73,8 @@ public class Character implements TraitChangeListener, ProfessionChangeListener,
     double critChance = (100 + newStats.get(Stat.CRITICAL_CHANCE)) / 100.0;
     double critDamage = (newStats.get(Stat.CRITICAL_DAMAGE)) / 100.0;
     newStats.add(Stat.EFFECTIVE_POWER, (int) Math.floor(baseDamage * (critChance * critDamage)));
+
+    // TODO: Add percentages
 
     stats = newStats;
     fireCharacterStatChanged();

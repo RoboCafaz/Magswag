@@ -15,7 +15,7 @@ public enum Slot {
   RING_1(EquipmentType.RING),
   RING_2(EquipmentType.RING),
   AMULET(EquipmentType.AMULET),
-  MAIN_HAND(EquipmentType.ONE_HANDED_WEAPON, EquipmentType.TWO_HANDED_WEAPON),
+  MAIN_HAND(EquipmentType.ONE_HANDED_WEAPON),//, EquipmentType.TWO_HANDED_WEAPON),
   OFF_HAND(EquipmentType.ONE_HANDED_WEAPON, EquipmentType.SHIELD);
 
   EquipmentType[] types;
@@ -25,10 +25,10 @@ public enum Slot {
   }
 
   public boolean applicable(EquipmentType type) {
-    return Arrays.asList(this.types).contains(type);
+    return Arrays.asList(types).contains(type);
   }
 
   public EquipmentType[] getTypes() {
-    return this.types;
+    return types;
   }
 }

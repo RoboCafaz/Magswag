@@ -3,8 +3,9 @@ package net.maguuma.magswag.gui.traits;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
-import net.maguuma.magswag.calculator.controller.ProfessionController;
-import net.maguuma.magswag.calculator.controller.listener.ProfessionChangeListener;
+
+import net.maguuma.magswag.calculator.character.listener.ProfessionChangeListener;
+import net.maguuma.magswag.calculator.controller.CharacterController;
 import net.maguuma.magswag.common.datatypes.professions.Profession;
 import net.maguuma.magswag.common.datatypes.professions.Trait;
 
@@ -13,7 +14,7 @@ public class TraitsPanel extends JPanel implements ProfessionChangeListener {
   public TraitsPanel() {
     initialize();
     performLayout();
-    ProfessionController.addProfessionChangeListener(this);
+    CharacterController.getCharacter().getProfessionModel().addProfessionChangeListener(this);
   }
 
   private void initialize() {
@@ -21,11 +22,11 @@ public class TraitsPanel extends JPanel implements ProfessionChangeListener {
   }
 
   private void performLayout() {
-    this.setBorder(BorderFactory.createTitledBorder("Traits"));
-    this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-    this.removeAll();
+    setBorder(BorderFactory.createTitledBorder("Traits"));
+    setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+    removeAll();
     int index = 0;
-    for (Trait trait : ProfessionController.getProfession().getTraits()) {
+    for (Trait trait : CharacterController.getCharacter().getProfessionModel().getProfession().getTraits()) {
       this.add(new TraitlinePanel(index++, trait));
     }
     revalidate();

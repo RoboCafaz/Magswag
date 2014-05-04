@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
 import net.maguuma.magswag.calculator.controller.listener.WeightChangeListener;
 import net.maguuma.magswag.common.constants.Stat;
 

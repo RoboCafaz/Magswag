@@ -1,18 +1,19 @@
-package net.maguuma.magswag.calculator.controller;
+package net.maguuma.magswag.calculator.character;
 
 import java.util.HashSet;
 import java.util.Set;
-import net.maguuma.magswag.calculator.controller.listener.TraitChangeListener;
+
+import net.maguuma.magswag.calculator.character.listener.TraitChangeListener;
 import net.maguuma.magswag.common.logging.Logger;
 
-public class TraitController {
+public class TraitModel {
   public static int MAX_TRAITS = 14;
   public static int MAX_TRAIT_LINE = 6;
 
-  private static Set<TraitChangeListener> traitChangeListeners = new HashSet<TraitChangeListener>();
-  private static int[] traits = new int[5];
+  private final Set<TraitChangeListener> traitChangeListeners = new HashSet<TraitChangeListener>();
+  private final int[] traits = new int[5];
 
-  public static int[] getTraits() {
+  public int[] getTraits() {
     return traits;
   }
 
@@ -20,7 +21,7 @@ public class TraitController {
     return getTraits()[index];
   }
 
-  public static void incrementTrait(int index) {
+  public void incrementTrait(int index) {
     if (pointsRemaining() <= 0) {
       Logger.log("Could not increment trait line #" + index + " because there are no traits left to spend!");
       return;
@@ -35,7 +36,7 @@ public class TraitController {
     fireTraitChanged(index, traits[index]);
   }
 
-  public static void decrementTrait(int index) {
+  public void decrementTrait(int index) {
     if (traits[index] <= 0) {
       Logger.log("Could not decrement trait line #" + index + " because there are no traits left to refund!");
       return;
@@ -45,7 +46,7 @@ public class TraitController {
     fireTraitChanged(index, traits[index]);
   }
 
-  public static int pointsRemaining() {
+  public int pointsRemaining() {
     int value = MAX_TRAITS;
     for (int i : traits) {
       value -= i;
@@ -53,17 +54,17 @@ public class TraitController {
     return value;
   }
 
-  private static void fireTraitChanged(int traitLine, int newValue) {
+  private void fireTraitChanged(int traitLine, int newValue) {
     for (TraitChangeListener listener : traitChangeListeners) {
       listener.traitChanged(traitLine, newValue);
     }
   }
 
-  public static void addTraitChangeListener(TraitChangeListener listener) {
+  public void addTraitChangeListener(TraitChangeListener listener) {
     traitChangeListeners.add(listener);
   }
 
-  public static void removeTraitChangeListener(TraitChangeListener listener) {
+  public void removeTraitChangeListener(TraitChangeListener listener) {
     traitChangeListeners.remove(listener);
   }
 }

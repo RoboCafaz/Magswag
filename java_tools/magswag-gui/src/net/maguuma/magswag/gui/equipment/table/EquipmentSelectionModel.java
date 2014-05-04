@@ -2,9 +2,11 @@ package net.maguuma.magswag.gui.equipment.table;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.table.DefaultTableModel;
+
 import net.maguuma.magswag.calculator.WeightCalculator;
-import net.maguuma.magswag.calculator.controller.ProfessionController;
+import net.maguuma.magswag.calculator.controller.CharacterController;
 import net.maguuma.magswag.common.constants.Rarity;
 import net.maguuma.magswag.common.constants.Stat;
 import net.maguuma.magswag.common.datatypes.datastore.DataHandler;
@@ -18,13 +20,13 @@ public class EquipmentSelectionModel extends DefaultTableModel {
   private final List<Equipment> equipment;
 
   public EquipmentSelectionModel() {
-    this.equipment = new ArrayList<Equipment>();
+    equipment = new ArrayList<Equipment>();
   }
 
   public void setGear(GearType gearType, Rarity rarity) {
-    this.equipment.clear();
+    equipment.clear();
     for (StatType statType : DataHandler.STAT_TYPES.getData()) {
-      this.equipment.add(new Equipment(gearType, ProfessionController.getProfession().getArmor(), statType, rarity));
+      equipment.add(new Equipment(gearType, CharacterController.getCharacter().getProfessionModel().getProfession().getArmor(), statType, rarity));
     }
   }
 
@@ -55,10 +57,10 @@ public class EquipmentSelectionModel extends DefaultTableModel {
 
   @Override
   public int getRowCount() {
-    if (this.equipment == null) {
+    if (equipment == null) {
       return 0;
     }
-    return this.equipment.size();
+    return equipment.size();
   }
 
   @Override
@@ -80,6 +82,6 @@ public class EquipmentSelectionModel extends DefaultTableModel {
   }
 
   public Equipment getRowValue(int row) {
-    return this.equipment.get(row);
+    return equipment.get(row);
   }
 }

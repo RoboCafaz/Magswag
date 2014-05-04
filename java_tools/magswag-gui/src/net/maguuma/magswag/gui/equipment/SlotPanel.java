@@ -2,14 +2,15 @@ package net.maguuma.magswag.gui.equipment;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 
-import net.maguuma.magswag.calculator.controller.EquipmentController;
-import net.maguuma.magswag.calculator.controller.listener.EquipmentChangeListener;
+import net.maguuma.magswag.calculator.character.listener.EquipmentChangeListener;
+import net.maguuma.magswag.calculator.controller.CharacterController;
 import net.maguuma.magswag.common.constants.EquipmentType;
 import net.maguuma.magswag.common.constants.Rarity;
 import net.maguuma.magswag.common.constants.Slot;
@@ -34,21 +35,21 @@ public class SlotPanel extends JPanel implements EquipmentChangeListener, Equipm
   }
 
   private void initialize() {
-    this.ascended = new JCheckBox("Ascended");
-    this.ascended.addActionListener(createChangeListener());
-    this.typeSelection = new JComboBox<EquipmentType>(this.slot.getTypes());
-    this.typeSelection.addActionListener(createChangeListener());
-    this.selectionButton = new JToggleButton("None");
-    this.selectionButton.addActionListener(createChangeListener());
-    EquipmentController.addEquipmentChangeListener(this);
+    ascended = new JCheckBox("Ascended");
+    ascended.addActionListener(createChangeListener());
+    typeSelection = new JComboBox<EquipmentType>(slot.getTypes());
+    typeSelection.addActionListener(createChangeListener());
+    selectionButton = new JToggleButton("None");
+    selectionButton.addActionListener(createChangeListener());
+    CharacterController.getCharacter().getEquipmentModel().addEquipmentChangeListener(this);
     EquipmentSelectionController.addEquipmentSelectionListener(this);
   }
 
   private void performLayout() {
-    this.setBorder(BorderFactory.createTitledBorder(this.slot.name()));
-    this.add(this.ascended);
-    this.add(this.typeSelection);
-    this.add(this.selectionButton);
+    setBorder(BorderFactory.createTitledBorder(slot.name()));
+    this.add(ascended);
+    this.add(typeSelection);
+    this.add(selectionButton);
   }
 
   private ActionListener createChangeListener() {
@@ -67,21 +68,20 @@ public class SlotPanel extends JPanel implements EquipmentChangeListener, Equipm
     } else {
       rarity = Rarity.EXOTIC;
     }
-    EquipmentSelectionController.setGearType(SlotPanel.this.slot,
-        DataHandler.GEAR_TYPES.get((EquipmentType) SlotPanel.this.typeSelection.getSelectedItem()), rarity);
+    EquipmentSelectionController.setGearType(SlotPanel.this.slot, DataHandler.GEAR_TYPES.get((EquipmentType) SlotPanel.this.typeSelection.getSelectedItem()), rarity);
   }
 
   @Override
   public void equipmentSelectionChanged(Slot slot, GearType gearType, Rarity rarity) {
-    this.selectionButton.setSelected(slot.equals(this.slot));
+    selectionButton.setSelected(slot.equals(this.slot));
   }
 
   @Override
   public void equipmentChanged(Slot slot, Equipment gear) {
     if (slot.equals(this.slot)) {
-      this.selectionButton.setText(gear.getStatType().getName());
-      this.typeSelection.setSelectedItem(gear.getGearType());
-      this.ascended.setSelected(gear.getRarity().equals(Rarity.ASCENDED));
+      selectionButton.setText(gear.getStatType().getName());
+      typeSelection.setSelectedItem(gear.getGearType());
+      ascended.setSelected(gear.getRarity().equals(Rarity.ASCENDED));
     }
   }
 }

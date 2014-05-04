@@ -1,4 +1,4 @@
-package net.maguuma.magswag.calculator.controller.listener;
+package net.maguuma.magswag.calculator.character.listener;
 
 import net.maguuma.magswag.common.datatypes.professions.Profession;
 

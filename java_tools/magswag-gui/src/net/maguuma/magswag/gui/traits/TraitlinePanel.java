@@ -7,14 +7,17 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import net.maguuma.magswag.calculator.controller.TraitController;
-import net.maguuma.magswag.calculator.controller.listener.TraitChangeListener;
+
+import net.maguuma.magswag.calculator.character.TraitModel;
+import net.maguuma.magswag.calculator.character.listener.TraitChangeListener;
+import net.maguuma.magswag.calculator.controller.CharacterController;
 import net.maguuma.magswag.common.datatypes.professions.Trait;
 
 @SuppressWarnings("serial")
@@ -45,144 +48,144 @@ public class TraitlinePanel extends JPanel implements TraitChangeListener {
     initialize();
     performLayout();
     validateTraits();
-    TraitController.addTraitChangeListener(this);
+    CharacterController.getCharacter().getTraitModel().addTraitChangeListener(this);
   }
 
   private void initialize() {
-    this.glue = new Box.Filler(new Dimension(0, 0), new Dimension(0, 0), new Dimension(32767, 0));
-    this.labelPrimary = new JLabel();
-    this.labelPrimaryValue = new JLabel();
-    this.labelSecondary = new JLabel();
-    this.labelSecondaryValue = new JLabel();
+    glue = new Box.Filler(new Dimension(0, 0), new Dimension(0, 0), new Dimension(32767, 0));
+    labelPrimary = new JLabel();
+    labelPrimaryValue = new JLabel();
+    labelSecondary = new JLabel();
+    labelSecondaryValue = new JLabel();
 
-    this.buttonIncrement = new JButton();
-    this.buttonIncrement.addActionListener(createIncrementListener());
-    this.buttonDecrement = new JButton();
-    this.buttonDecrement.addActionListener(createDecrementListener());
+    buttonIncrement = new JButton();
+    buttonIncrement.addActionListener(createIncrementListener());
+    buttonDecrement = new JButton();
+    buttonDecrement.addActionListener(createDecrementListener());
 
-    this.buttons = new JButton[6];
-    this.labelValue = new JLabel();
-    this.buttonTrait1 = new JButton();
-    this.buttons[0] = this.buttonTrait1;
-    this.buttonTrait2 = new JButton();
-    this.buttons[1] = this.buttonTrait2;
-    this.buttonTrait3 = new JButton();
-    this.buttons[2] = this.buttonTrait3;
-    this.buttonTrait4 = new JButton();
-    this.buttons[3] = this.buttonTrait4;
-    this.buttonTrait5 = new JButton();
-    this.buttons[4] = this.buttonTrait5;
-    this.buttonTrait6 = new JButton();
-    this.buttons[5] = this.buttonTrait6;
+    buttons = new JButton[6];
+    labelValue = new JLabel();
+    buttonTrait1 = new JButton();
+    buttons[0] = buttonTrait1;
+    buttonTrait2 = new JButton();
+    buttons[1] = buttonTrait2;
+    buttonTrait3 = new JButton();
+    buttons[2] = buttonTrait3;
+    buttonTrait4 = new JButton();
+    buttons[3] = buttonTrait4;
+    buttonTrait5 = new JButton();
+    buttons[4] = buttonTrait5;
+    buttonTrait6 = new JButton();
+    buttons[5] = buttonTrait6;
   }
 
   private void performLayout() {
     GridBagConstraints gridBagConstraints;
 
-    this.setBorder(BorderFactory.createTitledBorder(this.trait.getName()));
+    setBorder(BorderFactory.createTitledBorder(trait.getName()));
 
     setLayout(new GridBagLayout());
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridheight = 2;
     gridBagConstraints.fill = GridBagConstraints.BOTH;
     gridBagConstraints.weightx = 1.0;
-    add(this.glue, gridBagConstraints);
+    add(glue, gridBagConstraints);
 
-    this.labelPrimary.setHorizontalAlignment(SwingConstants.TRAILING);
-    this.labelPrimary.setText(this.trait.getPrimary().name() + ": +");
+    labelPrimary.setHorizontalAlignment(SwingConstants.TRAILING);
+    labelPrimary.setText(trait.getPrimary().name() + ": +");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-    add(this.labelPrimary, gridBagConstraints);
+    add(labelPrimary, gridBagConstraints);
 
-    this.labelPrimaryValue.setText("0");
-    gridBagConstraints = new GridBagConstraints();
-    gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-    gridBagConstraints.insets = new Insets(5, 5, 5, 5);
-    add(this.labelPrimaryValue, gridBagConstraints);
-
-    this.buttonIncrement.setText("+");
+    labelPrimaryValue.setText("0");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
     gridBagConstraints.insets = new Insets(5, 5, 5, 5);
-    add(this.buttonIncrement, gridBagConstraints);
+    add(labelPrimaryValue, gridBagConstraints);
 
-    this.labelSecondary.setHorizontalAlignment(SwingConstants.TRAILING);
-    this.labelSecondary.setText(this.trait.getSecondary().name() + ": +");
+    buttonIncrement.setText("+");
+    gridBagConstraints = new GridBagConstraints();
+    gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.insets = new Insets(5, 5, 5, 5);
+    add(buttonIncrement, gridBagConstraints);
+
+    labelSecondary.setHorizontalAlignment(SwingConstants.TRAILING);
+    labelSecondary.setText(trait.getSecondary().name() + ": +");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridy = 1;
     gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-    add(this.labelSecondary, gridBagConstraints);
+    add(labelSecondary, gridBagConstraints);
 
-    this.labelSecondaryValue.setText("0");
-    gridBagConstraints = new GridBagConstraints();
-    gridBagConstraints.gridy = 1;
-    gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-    gridBagConstraints.insets = new Insets(5, 5, 5, 5);
-    add(this.labelSecondaryValue, gridBagConstraints);
-
-    this.buttonDecrement.setText("-");
+    labelSecondaryValue.setText("0");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridy = 1;
     gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
     gridBagConstraints.insets = new Insets(5, 5, 5, 5);
-    add(this.buttonDecrement, gridBagConstraints);
+    add(labelSecondaryValue, gridBagConstraints);
 
-    Font f = this.labelValue.getFont();
+    buttonDecrement.setText("-");
+    gridBagConstraints = new GridBagConstraints();
+    gridBagConstraints.gridy = 1;
+    gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.insets = new Insets(5, 5, 5, 5);
+    add(buttonDecrement, gridBagConstraints);
+
+    Font f = labelValue.getFont();
     f = new Font(f.getFontName(), Font.BOLD, f.getSize() + 6);
-    this.labelValue.setFont(f);
-    this.labelValue.setHorizontalAlignment(SwingConstants.CENTER);
-    this.labelValue.setText("0");
+    labelValue.setFont(f);
+    labelValue.setHorizontalAlignment(SwingConstants.CENTER);
+    labelValue.setText("0");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridheight = 2;
     gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
     gridBagConstraints.insets = new Insets(10, 10, 10, 10);
-    add(this.labelValue, gridBagConstraints);
+    add(labelValue, gridBagConstraints);
 
-    this.buttonTrait1.setText("1");
+    buttonTrait1.setText("1");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridheight = 2;
     gridBagConstraints.fill = GridBagConstraints.BOTH;
     gridBagConstraints.insets = new Insets(10, 10, 10, 10);
-    add(this.buttonTrait1, gridBagConstraints);
+    add(buttonTrait1, gridBagConstraints);
 
-    this.buttonTrait2.setText("2");
+    buttonTrait2.setText("2");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridheight = 2;
     gridBagConstraints.fill = GridBagConstraints.BOTH;
-    add(this.buttonTrait2, gridBagConstraints);
+    add(buttonTrait2, gridBagConstraints);
 
-    this.buttonTrait3.setText("3");
-    gridBagConstraints = new GridBagConstraints();
-    gridBagConstraints.gridheight = 2;
-    gridBagConstraints.fill = GridBagConstraints.BOTH;
-    gridBagConstraints.insets = new Insets(10, 10, 10, 10);
-    add(this.buttonTrait3, gridBagConstraints);
-
-    this.buttonTrait4.setText("4");
-    gridBagConstraints = new GridBagConstraints();
-    gridBagConstraints.gridheight = 2;
-    gridBagConstraints.fill = GridBagConstraints.BOTH;
-    add(this.buttonTrait4, gridBagConstraints);
-
-    this.buttonTrait5.setText("5");
+    buttonTrait3.setText("3");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridheight = 2;
     gridBagConstraints.fill = GridBagConstraints.BOTH;
     gridBagConstraints.insets = new Insets(10, 10, 10, 10);
-    add(this.buttonTrait5, gridBagConstraints);
+    add(buttonTrait3, gridBagConstraints);
 
-    this.buttonTrait6.setText("6");
+    buttonTrait4.setText("4");
     gridBagConstraints = new GridBagConstraints();
     gridBagConstraints.gridheight = 2;
     gridBagConstraints.fill = GridBagConstraints.BOTH;
-    add(this.buttonTrait6, gridBagConstraints);
+    add(buttonTrait4, gridBagConstraints);
+
+    buttonTrait5.setText("5");
+    gridBagConstraints = new GridBagConstraints();
+    gridBagConstraints.gridheight = 2;
+    gridBagConstraints.fill = GridBagConstraints.BOTH;
+    gridBagConstraints.insets = new Insets(10, 10, 10, 10);
+    add(buttonTrait5, gridBagConstraints);
+
+    buttonTrait6.setText("6");
+    gridBagConstraints = new GridBagConstraints();
+    gridBagConstraints.gridheight = 2;
+    gridBagConstraints.fill = GridBagConstraints.BOTH;
+    add(buttonTrait6, gridBagConstraints);
   }
 
   private ActionListener createIncrementListener() {
     return new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        TraitController.incrementTrait(TraitlinePanel.this.index);
+        CharacterController.getCharacter().getTraitModel().incrementTrait(index);
       }
     };
   }
@@ -191,32 +194,29 @@ public class TraitlinePanel extends JPanel implements TraitChangeListener {
     return new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        TraitController.decrementTrait(TraitlinePanel.this.index);
+        CharacterController.getCharacter().getTraitModel().decrementTrait(index);
       }
     };
   }
 
   private void validateTraits() {
-    for (int i = 0; i < TraitController.getTraits().length; i++) {
-      traitChanged(i, TraitController.getTraits()[i]);
+    for (int i = 0; i < CharacterController.getCharacter().getTraitModel().getTraits().length; i++) {
+      traitChanged(i, CharacterController.getCharacter().getTraitModel().getTraits()[i]);
     }
   }
 
   @Override
   public void traitChanged(int traitLine, int newValue) {
-    if (traitLine == this.index) {
-      this.labelValue.setText(String.valueOf(newValue));
-      this.labelPrimaryValue.setText(String.valueOf(newValue * 50));
-      this.labelSecondaryValue.setText(String.valueOf(newValue * 50));
+    if (traitLine == index) {
+      labelValue.setText(String.valueOf(newValue));
+      labelPrimaryValue.setText(String.valueOf(newValue * 50));
+      labelSecondaryValue.setText(String.valueOf(newValue * 50));
 
-      for (int i = 0; i < this.buttons.length; i++) {
-        this.buttons[i].setEnabled(newValue > i);
+      for (int i = 0; i < buttons.length; i++) {
+        buttons[i].setEnabled(newValue > i);
       }
     }
-    this.buttonDecrement
-        .setEnabled(!(TraitController.getTraits()[this.index] <= 0 || TraitController.pointsRemaining() >= TraitController.MAX_TRAITS));
-    this.buttonIncrement
-        .setEnabled(!(TraitController.getTraits()[this.index] >= TraitController.MAX_TRAIT_LINE || TraitController
-            .pointsRemaining() <= 0));
+    buttonDecrement.setEnabled(!(CharacterController.getCharacter().getTraitModel().getTraits()[index] <= 0 || CharacterController.getCharacter().getTraitModel().pointsRemaining() >= TraitModel.MAX_TRAITS));
+    buttonIncrement.setEnabled(!(CharacterController.getCharacter().getTraitModel().getTraits()[index] >= TraitModel.MAX_TRAIT_LINE || CharacterController.getCharacter().getTraitModel().pointsRemaining() <= 0));
   }
 }

@@ -4,9 +4,11 @@ import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+
 import net.maguuma.magswag.common.logging.Logger;
 
 @SuppressWarnings("serial")
@@ -17,12 +19,12 @@ public class PopupWindow extends JDialog {
   }
 
   private void initialize() {
-    this.addFocusListener(this.createFocusListener());
+    addFocusListener(createFocusListener());
   }
 
   private void performLayout() {
-    this.setUndecorated(true);
-    ((JPanel) this.getContentPane()).setBorder(BorderFactory.createEtchedBorder());
+    setUndecorated(true);
+    ((JPanel) getContentPane()).setBorder(BorderFactory.createEtchedBorder());
   }
 
   public void showPopup(Point point) {
@@ -30,9 +32,9 @@ public class PopupWindow extends JDialog {
   }
 
   public void showPopup(int x, int y) {
-    this.pack();
+    pack();
     this.setLocation(x, y);
-    this.setVisible(true);
+    setVisible(true);
   }
 
   public void showPopup(Component component) {

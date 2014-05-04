@@ -6,6 +6,7 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
 import net.maguuma.magswag.calculator.controller.WeightController;
 import net.maguuma.magswag.common.constants.Stat;
 
@@ -22,14 +23,14 @@ public class WeightInput extends JPanel {
   }
 
   private void initialize() {
-    this.spinnerModel = new SpinnerNumberModel(10, 0, 100, 1);
-    this.spinnerModel.addChangeListener(createChangeListener());
+    spinnerModel = new SpinnerNumberModel(10, 0, 100, 1);
+    spinnerModel.addChangeListener(createChangeListener());
     updateWeightController();
   }
 
   private void performLayout() {
-    this.add(new JLabel(this.stat.name()));
-    this.add(new JSpinner(this.spinnerModel));
+    this.add(new JLabel(stat.name()));
+    this.add(new JSpinner(spinnerModel));
   }
 
   protected void updateWeightController() {

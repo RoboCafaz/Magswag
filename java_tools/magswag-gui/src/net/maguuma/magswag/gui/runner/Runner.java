@@ -1,6 +1,7 @@
 package net.maguuma.magswag.gui.runner;
 
 import javax.swing.JFrame;
+
 import net.maguuma.magswag.gui.SwagInterface;
 
 public class Runner {

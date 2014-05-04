@@ -1,5 +1,7 @@
 package net.maguuma.magswag.common.datatypes.items;
 
+import java.util.Arrays;
+
 import net.maguuma.magswag.common.constants.EquipmentType;
 import net.maguuma.magswag.common.constants.Stat;
 
@@ -13,14 +15,18 @@ public class StatType {
   }
 
   public String getName() {
-    return this.name;
+    return name;
   }
 
   public EquipmentType[] getEquipmentTypes() {
-    return this.types;
+    return types;
   }
 
   public Stat[] getStats() {
-    return this.stats;
+    return stats;
+  }
+
+  public boolean applicable(EquipmentType equipmentType) {
+    return Arrays.asList(types).contains(equipmentType);
   }
 }

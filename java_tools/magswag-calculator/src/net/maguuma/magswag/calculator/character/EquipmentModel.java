@@ -29,6 +29,16 @@ public class EquipmentModel {
     fireGearChanged(slot, equip);
   }
 
+  public int emptySlots() {
+    int empty = 0;
+    for (Slot slot : Slot.values()) {
+      if (getGear(slot) == null) {
+        empty++;
+      }
+    }
+    return empty;
+  }
+
   private void fireGearChanged(Slot slot, Equipment equip) {
     for (EquipmentChangeListener listener : listeners) {
       listener.equipmentChanged(slot, equip);
@@ -41,5 +51,16 @@ public class EquipmentModel {
 
   public void removeEquipmentChangeListener(EquipmentChangeListener listener) {
     listeners.remove(listener);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    for (Equipment equip : getGear().values()) {
+      sb.append("[");
+      sb.append(equip.toString());
+      sb.append("]");
+    }
+    return sb.toString();
   }
 }

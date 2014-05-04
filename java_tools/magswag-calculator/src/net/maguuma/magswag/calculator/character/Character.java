@@ -115,4 +115,9 @@ public class Character implements TraitChangeListener, ProfessionChangeListener,
   public void traitChanged(int traitLine, int newValue) {
     recalculate();
   }
+
+  @Override
+  public String toString() {
+    return equipmentModel.toString();
+  }
 }

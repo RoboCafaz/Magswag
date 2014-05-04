@@ -1,7 +1,6 @@
 package net.maguuma.magswag.gui.brute.table;
 
 import java.awt.BorderLayout;
-import java.util.Map.Entry;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -16,9 +15,7 @@ import net.maguuma.magswag.calculator.character.Character;
 import net.maguuma.magswag.calculator.controller.CharacterController;
 import net.maguuma.magswag.calculator.controller.WeightController;
 import net.maguuma.magswag.calculator.controller.listener.WeightChangeListener;
-import net.maguuma.magswag.common.constants.Slot;
 import net.maguuma.magswag.common.constants.Stat;
-import net.maguuma.magswag.common.datatypes.items.Equipment;
 import net.maguuma.magswag.common.logging.Logger;
 
 @SuppressWarnings("serial")
@@ -70,10 +67,7 @@ public class CharacterViewerPanel extends JPanel implements WeightChangeListener
         if (row != -1) {
           row = sorter.convertRowIndexToModel(row);
           Character character = model.getRowValue(row);
-          Logger.info("-- Character -- ");
-          for (Entry<Slot, Equipment> entry : character.getEquipmentModel().getGear().entrySet()) {
-            Logger.info(entry.getKey() + " - " + entry.getValue());
-          }
+          Logger.info(character.toString());
         }
       }
     };

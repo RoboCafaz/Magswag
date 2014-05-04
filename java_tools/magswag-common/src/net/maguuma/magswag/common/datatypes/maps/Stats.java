@@ -1,16 +1,17 @@
 package net.maguuma.magswag.common.datatypes.maps;
 
 import java.util.HashMap;
+
 import net.maguuma.magswag.common.constants.Stat;
 import net.maguuma.magswag.common.logging.Logger;
 
 @SuppressWarnings("serial")
 public class Stats extends HashMap<Stat, Integer> {
-	public Integer add(Stat stat, Integer value){
-		value += get(stat);
-		return super.put(stat,value);
-	}
-	
+  public Integer add(Stat stat, Integer value) {
+    value += get(stat);
+    return super.put(stat, value);
+  }
+
   @Override
   public Integer put(Stat stat, Integer value) {
     if (stat.isComplex()) {
@@ -36,7 +37,7 @@ public class Stats extends HashMap<Stat, Integer> {
     super.put(Stat.CRITICAL_CHANCE, (int) (Math.floor(get(Stat.PRECISION) / 4)));
     super.put(Stat.CRITICAL_DAMAGE, (int) (Math.floor(get(Stat.FEROCITY) / 15)));
     super.put(Stat.HEALTH, get(Stat.VITALITY) * 10);
-    super.put(Stat.EFFECTIVE_HEALTH, (int) Math.floor((get(Stat.ARMOR) * get(Stat.HEALTH)) / 1000));
+    super.put(Stat.EFFECTIVE_HEALTH, (int) Math.floor((Math.max(1, get(Stat.ARMOR)) * Math.max(1, get(Stat.HEALTH))) / 1000));
 
     double baseDamage = get(Stat.POWER);
     double critChance = (100 + get(Stat.CRITICAL_CHANCE)) / 100.0;

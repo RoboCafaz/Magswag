@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>OMG IT'S TYRIA WOW</title>
+		<meta charset="utf-8">
+		<style>
+			body {
+				margin: 0px;
+				background-color: #000000;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script src="js/three.min.js"></script>
+		<script src="js/TrackballControls.js"></script>
+
+		<script>
+			var camera, scene, renderer;
+			var mesh;
+
+			var WIDTH = window.innerWidth,
+			HEIGHT = window.innerHeight;
+
+			init();
+			animate();
+
+			function init() {
+				renderer = new THREE.WebGLRenderer();
+				renderer.setSize(window.innerWidth, window.innerHeight);
+				document.body.appendChild(renderer.domElement);
+
+				camera = new THREE.PerspectiveCamera(25, WIDTH / HEIGHT, 1, 10000);
+				camera.position.z = 350;
+
+				controls = new THREE.TrackballControls(camera);
+
+				scene = new THREE.Scene();
+
+				var geometry = new THREE.SphereGeometry(50, 50, 50);
+
+				var texture = THREE.ImageUtils.loadTexture('map.jpg');
+				texture.anisotropy = renderer.getMaxAnisotropy();
+
+				var material = new THREE.MeshBasicMaterial({
+						map : texture
+					});
+
+				mesh = new THREE.Mesh(geometry, material);
+				scene.add(mesh);
+				
+				window.addEventListener('resize', onWindowResize, false);
+			}
+
+			function onWindowResize() {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize(window.innerWidth, window.innerHeight);
+			}
+
+			function animate() {
+				requestAnimationFrame(animate);
+
+				render();
+			}
+
+			function render() {
+				var time = Date.now() * 0.001;
+
+				controls.update();
+				renderer.render(scene, camera);
+			}
+		</script>
+	</body>
+</html>

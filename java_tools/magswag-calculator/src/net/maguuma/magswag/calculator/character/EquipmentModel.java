@@ -1,7 +1,9 @@
 package net.maguuma.magswag.calculator.character;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -30,10 +32,14 @@ public class EquipmentModel {
   }
 
   public int emptySlots() {
-    int empty = 0;
-    for (Slot slot : Slot.values()) {
+    return getEmptySlots().size();
+  }
+
+  public List<Slot> getEmptySlots() {
+    List<Slot> empty = new ArrayList<Slot>();
+    for (Slot slot : Slot.sortedValues()) {
       if (getGear(slot) == null) {
-        empty++;
+        empty.add(slot);
       }
     }
     return empty;

@@ -23,7 +23,7 @@ public class EquipmentPanel extends JPanel {
 
     int i = 0;
     JPanel current = null;
-    for (Slot slot : Slot.values()) {
+    for (Slot slot : Slot.sortedValues()) {
       if (current == null || i >= 6) {
         i = 0;
         current = createNewColumn();

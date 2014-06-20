@@ -1,0 +1,236 @@
+[{
+		"name" : "Week 2",
+		"start" : 1403308800000,
+		"end" : 1403913600000,
+		"hard" : "1V1 ME BRO",
+		"video" : "https://www.youtube.com/watch?v=s2sd3myLwmU",
+		"cells" : [
+			[{
+					"content" : "A realm at 550 or higher PPT."
+				}, {
+					"content" : "Someone asking for gold donations for a commander tag."
+				}, {
+					"content" : "A single player being chased by 5 or more enemies."
+				}, {
+					"content" : "Commander raging at his followers."
+				}, {
+					"content" : "A realm at 10 or lower PPT."
+				}
+			],
+			[{
+					"content" : "A Thief affected by a Stealth Trap."
+				}, {
+					"content" : "An enemy player channelling a skill point."
+				}, {
+					"content" : "Level 80 food dropped in the middle of nowhere."
+				}, {
+					"content" : "A player with a Commander Tag AFK in the field."
+				}, {
+					"content" : "A golem trying to use its Fire Spin on a gate."
+				}
+			],
+			[{
+					"content" : "A bunch of siege blueprint bundles making a shape on the ground."
+				}, {
+					"content" : "An uplevel character taking a golem on a stroll by himself."
+				}, {
+					"content" : "An enemy Norn using the Snow Leopard Form charge skill to run away."
+				}, {
+					"content" : "Three or more players dead at the bottom of a cliff."
+				}, {
+					"content" : "An ArenaNet employee in a blob."
+				}
+			],
+			[{
+					"content" : "A longbow Ranger in a guild raid."
+				}, {
+					"content" : "Commander Siegerazer/Crusher dead."
+				}, {
+					"content" : "A player wielding Meteorlogicus."
+				}, {
+					"content" : "An uplevel in the Obsidian Sanctum duelling area."
+				}, {
+					"content" : "Receive an angry PM from an enemy player."
+				}
+			],
+			[{
+					"content" : "A dead Mesmer in the inner room of a keep or castle."
+				}, {
+					"content" : "A zerg capturing Bloodlust."
+				}, {
+					"content" : "Megablob trying to break a door down with no siege."
+				}, {
+					"content" : "An enemy player wiping to NPCs while trying to solo a camp."
+				}, {
+					"content" : "A naked player in a blob."
+				}
+			]
+		]
+	}, {
+		"name" : "Week 1",
+		"start" : 1402704000000,
+		"end" : 1403308800000,
+		"hard" : "HARD MODE",
+		"video" : "https://www.youtube.com/watch?v=4HXJN7rzaJg",
+		"cells" : [
+			[{
+					"content" : "A Warrior using Whirling Axe.",
+					"submissions" : [{
+							"user" : "ndrangles.5183",
+							"link" : "http://i.imgur.com/mHaF7th.jpg"
+						}
+					],
+					"bingo" : true
+				}, {
+					"content" : "Three maps queued at the same time.",
+					"submissions" : [{
+							"user" : "Drwartooth.4678﻿",
+							"link" : "http://i.imgur.com/W4TvI9S.jpg"
+						}
+					],
+					"bingo" : true
+				}, {
+					"content" : "A dead Thief in the inner room of a keep or castle.",
+					"submissions" : [{
+							"user" : "kelmax.6549﻿﻿",
+							"link" : "http://i.imgur.com/u6uZK5u.jpg"
+						}
+					],
+					"bingo" : true
+				}, {
+					"content" : "A realm at 420 PPT.",
+					"submissions" : [{
+							"user" : "Angelwood.7652",
+							"link" : "http://i.imgur.com/LSnnBXb.jpg"
+						}
+					],
+					"bingo" : true
+				}, {
+					"content" : "Five or more Arrow Carts in a row.",
+					"submissions" : [{
+							"user" : "shushuPoPo.1583﻿",
+							"link" : "http://i.imgur.com/2L4kXPy.jpg"
+						}
+					],
+					"bingo" : true
+				}
+			],
+			[{
+					"content" : "An enemy dancing, sitting, or laughing on your corpse.",
+					"submissions" : [{
+							"user" : "sparkz.7102",
+							"link" : "http://i.imgur.com/gZXFgAt.jpg"
+						}
+					]
+				}, {
+					"content" : "A Spirit Ranger.",
+					"submissions" : [{
+							"user" : "sparkz.7102",
+							"link" : "http://i.imgur.com/NvJbLhv.jpg"
+						}
+					]
+				}, {
+					"content" : "A player wielding Rodgort.",
+					"submissions" : [{
+							"user" : "iamtheduke.6201",
+							"link" : "http://i.imgur.com/jKcsRbJ.jpg"
+						}
+					]
+				}, {
+					"content" : "Three or more guild recruitment messages in a row.",
+					"submissions" : [{
+							"user" : "Skybear.4173﻿",
+							"link" : "http://i.imgur.com/Q49HCIE.jpg"
+						}
+					]
+				}, {
+					"content" : "An enemy in a megablob bowing on your lone corpse."
+				}
+			],
+			[{
+					"content" : "A player wielding The Minstrel.",
+					"submissions" : [{
+							"user" : "iamtheduke.6201",
+							"link" : "http://i.imgur.com/ZEFDlcD.jpg"
+						}
+					]
+				}, {
+					"content" : "A human Thief with Incinerator and Quip running from a fight."
+				}, {
+					"content" : "A blob in the skritt or centaur camps."
+				}, {
+					"content" : "Three or more commander tags in the same spot.",
+					"submissions" : [{
+							"user" : "horus.8327﻿",
+							"link" : "http://i.imgur.com/XxvoipW.jpg"
+						}, {
+							"user" : "Mycurse.7436",
+							"link" : "http://puu.sh/9sU5C/d38f2526f3.jpg"
+						}
+					]
+				}, {
+					"content" : "An Arrow Cart on the top floor of Stonemist."
+				}
+			],
+			[{
+					"content" : "A player standing in the invincibility zone while enemies try to attack him or her."
+				}, {
+					"content" : "A player dead to Legendary Defenders (base defense NPCs.)",
+					"submissions" : [{
+							"user" : "Folie.7980﻿",
+							"link" : "http://i.imgur.com/OlGhMhG.jpg"
+						}
+					]
+				}, {
+					"content" : "An enemy solo-defending a fully-upgraded tower with an Arrow Cart or Ballista."
+				}, {
+					"content" : "A bearbow Ranger.",
+					"submissions" : [{
+							"user" : "Tjizn.5834",
+							"link" : "http://i.imgur.com/rbr6q7D.jpg"
+						}
+					]
+				}, {
+					"content" : "An enemy with a taunting guild name.",
+					"submissions" : [{
+							"user" : "RanchDressin.8210",
+							"link" : "http://i.imgur.com/MQvS8lT.jpg"
+						}
+					]
+				}
+			],
+			[{
+					"content" : "An enemy using a racial skill.",
+					"submissions" : [{
+							"user" : "Necro Boys Friend.8509",
+							"link" : "http://i.imgur.com/R2wWRac.jpg"
+						}
+					]
+				}, {
+					"content" : "Open-field Arrow Cart.",
+					"submissions" : [{
+							"user" : "Folie.7980﻿",
+							"link" : "http://i.imgur.com/fKq2MiY.jpg"
+						}
+					]
+				}, {
+					"content" : "Someone portalling the Obsidian Sanctum jumping puzzle."
+				}, {
+					"content" : "A player alive inside an enemy spawn area.",
+					"submissions" : [{
+							"user" : "Folie.7980﻿",
+							"link" : "http://i.imgur.com/RHNEK2B.jpg"
+						}
+					]
+				}, {
+					"content" : "Golems at Water Gate on any Keep.",
+					"submissions" : [{
+							"user" : "crabnarok.8765﻿",
+							"link" : "http://i.imgur.com/trPJNjt.jpg"
+						}
+					]
+				}
+			]
+		]
+	}
+]

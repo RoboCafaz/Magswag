@@ -3,6 +3,10 @@ angular.module("SwagNav")
 			return QueryFor('events', 'db/events.json');
 		}
 	])
+.factory("BingoLoader", ["QueryFor", function (QueryFor) {
+			return QueryFor('events', 'db/bingo.json');
+		}
+	])
 .factory("QueryFor", function ($http, $q) {
 	return function (name, url) {
 		var results = $q.defer();

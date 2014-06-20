@@ -1,0 +1,40 @@
+<div>
+	<h2>The Board</h2>
+	<div ng-show="!live">
+		<p>There is no game running right now! Check back again soon!</p>
+	</div>
+	<select ng-model="board" ng-options="createName(sel) for sel in bingoBoards">
+		<option value="">-- Select Board --</option>
+	</select>
+	<div ng-show="board">
+		<h3>{{createName(board)}}</h3>
+		<ul><li>
+		<b ng-show="board.video == null">This board is only a sample and does not count towards any Bingo Games!</b>
+		<a href="{{board.video}}" ng-show="board.video != null">Click here for the weekly video and where to submit your screenshots!</a>
+		</li></ul>
+		<div id="bingo">
+			<ul id="head">
+				<li>-</li>
+				<li>B</li>
+				<li>I</li>
+				<li>N</li>
+				<li>G</li>
+				<li>O</li>
+			</ul>
+			<ul ng-repeat="line in board.cells">
+				<li>{{$index+1}}</li>
+				<li ng-repeat="cell in line" ng-class="getStyle(cell)">
+					<p ng-show="isDante(cell)">{{board.hard}}</p>
+					{{cell.content}}
+					<br/>
+					<p ng-show="isDante(cell)">{{board.hard}}</p>
+					<a href="{{cell.submissions[0].link}}" ng-show="isFinished(cell)">Completed by {{cell.submissions[0].user}}!</a>
+					<div ng-show="cell.submissions.length > 1">
+							<p class="honorable">Honorable Mentions:</p>
+							<text ng-repeat="submission in cell.submissions" ng-show="!$first" ><a href="{{submission.link}}">{{submission.user}}</a> </text>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

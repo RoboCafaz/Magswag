@@ -1,0 +1,77 @@
+#bingo {
+    table-layout: fixed;
+	margin: auto;
+}
+
+#bingo a{
+	color: #aef;
+	text-decoration: none;
+	font-size: 8px;
+	font-weight: bold;
+}
+
+#bingo a:hover{
+	text-decoration: underline;
+}
+
+#bingo ul {
+	display: table-row;
+	background: #DDD;
+	font-size: 12px;
+}
+
+#bingo li {
+	display: table-cell;
+	vertical-align: middle;
+	height: 120px;
+	width: 5%;
+	text-align: center;
+	border: 3px dashed #000;
+	padding: 5px;
+}
+
+#bingo li:first-child{
+	font-weight: bold;
+	background-color: #f94;
+	font-size: 32px;
+}
+
+#bingo ul#head{
+	font-weight: bold;
+	background-color: #f94;
+	font-size: 32px;
+}
+
+#bingo li.dante {
+	background-color: #f44;
+}
+
+#bingo li.dante p{
+	background-color: #ff0;
+	color: #f00;
+	vertical-align: text-bottom;
+}
+
+#bingo li.finished{
+	background-color: #00f;
+	color: #fff;
+}
+
+#bingo li.finished.bingo{
+	font-style: italic;
+	background-color: #ff9;
+	color: #000;
+}
+
+#bingo li.finished.bingo a{
+	color: #900;
+}
+
+#bingo .honorable{
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration: underline;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	color: #FF0;
+}
